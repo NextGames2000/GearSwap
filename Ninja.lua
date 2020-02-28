@@ -25,7 +25,7 @@ end
 
 function get_sets()
 
-	-- This is where we will define our precast sets.  These are sets of gear that get equiped BEFORE the spell or ability is used.
+	-- This is where we will define our precast sets.  These are sets of gear that get equipped BEFORE the spell or ability is used.
 	sets.precast = {}
 	sets.precast.fc = {
 		ammo="Sapience Orb",
@@ -58,7 +58,7 @@ function get_sets()
 		back={ name="Andartia's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10',}},
 	}
 	
-	-- This is where we will define our midcast sets.  These are sets of gear that get equiped BEFORE the spell or ability lands.
+	-- This is where we will define our midcast sets.  These are sets of gear that get equipped BEFORE the spell or ability lands.
 	sets.midcast = {}
 	sets.midcast.enmity = {
 		ammo="Sapience Orb",
@@ -262,7 +262,7 @@ function get_sets()
 		back={ name="Andartia's Mantle", augments={'STR+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%',}},
 	}
 
-	-- This is where we will define our aftercast sets.  These are sets of gear that get equiped AFTER the spell or ability is used.  Normally this is used to put you back into your current TP set.
+	-- This is where we will define our aftercast sets.  These are sets of gear that get equipped AFTER the spell or ability is used.  Normally this is used to put you back into your current TP set.
 	sets.aftercast = {}
 	sets.aftercast.dw40 = {
 		ammo="Seki Shuriken",
