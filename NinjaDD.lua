@@ -33,7 +33,7 @@ function get_sets()
 		body={ name="Taeon Tabard", augments={'"Fast Cast"+5',}},
 		hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}},
 		legs={ name="Herculean Trousers", augments={'Mag. Acc.+14 "Mag.Atk.Bns."+14','"Fast Cast"+6',}},
-		feet={ name="Herculean Boots", augments={'Mag. Acc.+4','"Fast Cast"+6','INT+7',}},
+		feet="Hattori Kyahan +1",
 		neck="Orunmila's Torque",
 		waist="Oneiros Belt",
 		left_ear="Loquac. Earring",
@@ -42,14 +42,14 @@ function get_sets()
 		right_ring="Kishar Ring",
 		back={ name="Andartia's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10',}},
 	}
-	
+
 	sets.precast.utsusemi = {
 		ammo="Sapience Orb",
 		head={ name="Herculean Helm", augments={'Accuracy+13','"Fast Cast"+6',}},
 		body={ name="Taeon Tabard", augments={'"Fast Cast"+5',}},
 		hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}},
 		legs={ name="Herculean Trousers", augments={'Mag. Acc.+14 "Mag.Atk.Bns."+14','"Fast Cast"+6',}},
-    	feet="Hattori Kyahan +1",
+		feet="Hattori Kyahan +1",
 		neck="Orunmila's Torque",
 		waist="Oneiros Belt",
 		left_ear="Loquac. Earring",
@@ -136,16 +136,16 @@ function get_sets()
 	}
 
 	sets.midcast.migawari = {
-		body="Hattori ningi +1",
+		body="Hattori nigi +1",
 	}
 
 	sets.midcast.bladehi = {
 		ammo="Yetshila +1",
-		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
+		head="Hachiya Hatsu. +3",
 		body="Ken. Samue +1",
 		hands="Mummu Wrists +2",
 		legs={ name="Mochi. Hakama +3", augments={'Enhances "Mijin Gakure" effect',}},
-		feet={ name="Adhe. Gamashes +1", augments={'STR+12','DEX+12','Attack+20',}},
+		feet="Mummu Gamash. +2",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear="Odr Earring",
@@ -161,24 +161,24 @@ function get_sets()
 		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
 		legs={ name="Mochi. Hakama +3", augments={'Enhances "Mijin Gakure" effect',}},
-		feet={ name="Adhe. Gamashes +1", augments={'STR+12','DEX+12','Attack+20',}},
+		feet="Ken. Sune-Ate +1",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear="Odr Earring",
 		right_ear={ name="Lugra Earring +1", augments={'Path: A',}},
 		left_ring="Gere Ring",
-		right_ring="Regal Ring",
+		right_ring="Epaminondas's Ring",
 		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}},
 	}
 	
 	sets.midcast.bladeshun = {
 		ammo="Voluspa Tathlum",
-		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
+		head="Ken. Jinpachi +1",
 		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
-		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
-		legs={ name="Mochi. Hakama +3", augments={'Enhances "Mijin Gakure" effect',}},
-		feet={ name="Adhe. Gamashes +1", augments={'STR+12','DEX+12','Attack+20',}},
-		neck="Fotia Gorget",
+		hands="Ken. Tekko +1",
+		legs="Jokushu Haidate",
+		feet="Ken. Sune-Ate +1",
+		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist="Fotia Belt",
 		left_ear="Odr Earring",
 		right_ear={ name="Lugra Earring +1", augments={'Path: A',}},
@@ -205,15 +205,15 @@ function get_sets()
 	
 	sets.midcast.bladekamu = {
 		ammo="Voluspa Tathlum",
-		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
+		head="Hachiya Hatsu. +3",
 		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
 		legs={ name="Mochi. Hakama +3", augments={'Enhances "Mijin Gakure" effect',}},
-		feet={ name="Adhe. Gamashes +1", augments={'STR+12','DEX+12','Attack+20',}},
-		neck="Fotia Gorget",
+		feet="Ken. Sune-Ate +1",
+		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
-		right_ear={ name="Lugra Earring +1", augments={'Path: A',}},
 		left_ear="Brutal Earring",
+		right_ear={ name="Lugra Earring +1", augments={'Path: A',}},
 		left_ring="Gere Ring",
 		right_ring="Regal Ring",
 		back={ name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
@@ -221,12 +221,12 @@ function get_sets()
 
 	sets.midcast.bladeku = {
 		ammo="Voluspa Tathlum",
-		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
+		head="Hachiya Hatsu. +3",
 		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
 		legs={ name="Mochi. Hakama +3", augments={'Enhances "Mijin Gakure" effect',}},
-		feet={ name="Adhe. Gamashes +1", augments={'STR+12','DEX+12','Attack+20',}},
-		neck="Fotia Gorget",
+		feet="Ken. Sune-Ate +1",
+		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist="Fotia Belt",
 		left_ear="Brutal Earring",
 		right_ear={ name="Lugra Earring +1", augments={'Path: A',}},
@@ -318,19 +318,19 @@ function get_sets()
 	}
 
 	sets.aftercast.dw0 = {
-		ammo="Date Shuriken",
-		head="Ken. Jinpachi +1",
+		ammo="Seki Shuriken",
+		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
 		body="Ken. Samue +1",
-		hands="Ken. Tekko +1",
-		legs="Ken. Hakama +1",
+		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
+		legs={ name="Samnuha Tights", augments={'STR+10','DEX+10','"Dbl.Atk."+3','"Triple Atk."+3',}},
 		feet="Ken. Sune-Ate +1",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
-		waist="Windbuffet Belt +1",
+		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear="Brutal Earring",
-		right_ear="Cessance Earring",
+		right_ear="Dedition Earring",
 		left_ring="Gere Ring",
 		right_ring="Epona's Ring",
-		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Damage taken-5%',}},
+		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Damage taken-5%',}},
 	}
 
 	sets.aftercast.accuracy = {
@@ -346,7 +346,7 @@ function get_sets()
 		right_ear="Mache Earring +1",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
-		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Damage taken-5%',}},
+		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%',}},
 	}
 
 	sets.aftercast.evasion = {
@@ -363,7 +363,7 @@ function get_sets()
 		left_ring="Vengeful Ring",
 		right_ring="Hizamaru Ring",
 		back={ name="Andartia's Mantle", augments={'AGI+20','Eva.+20 /Mag. Eva.+20','Evasion+10','"Dual Wield"+10','Evasion+15',}},
-	}
+	}	
 	
 	sets.aftercast.magicdef = {
 		ammo="Staunch Tathlum +1",
@@ -402,18 +402,6 @@ end
   -- This is the precast section.  It is used for things you want to happen before you start to start to use the ability or spell.
   function precast(spell, act)
 
-	if spell.english == "Utsusemi: Ichi" then
-		if buffactive['Copy Image'] then
-			send_command('cancel 66')
-		elseif buffactive['Copy Image (2)'] then 
-			send_command('cancel 444')
-		elseif buffactive['Copy Image (3)'] then
-			send_command('cancel 445')
-		elseif buffactive['Copy Image (4+)'] then
-			send_command('cancel 446')
-		end
-	end
-
 	if spell.english:startswith('Utsusemi') then
 		equip(sets.precast.utsusemi)
 	end
@@ -444,6 +432,7 @@ end
 
 	if spell.english:startswith('Migawari') then
 		equip (sets.precast.fc)
+	equip (sets.midcast.migawari)
 	end
 	
 	if spell.english:startswith('Yurin') then
@@ -505,6 +494,22 @@ end
 function midcast(spell, act)
 
 	-- The below command is used to cancel old shadows if they can not be overwritten by the newly cased Utsusemi.
+	if spell.english:startswith('Utsusemi') then
+		equip(sets.midcast.utsusemi)
+	end
+
+	if spell.english == "Utsusemi: Ichi" then
+		if buffactive['Copy Image'] then
+			send_command('cancel 66')
+		elseif buffactive['Copy Image (2)'] then 
+			send_command('cancel 444')
+		elseif buffactive['Copy Image (3)'] then
+			send_command('cancel 445')
+		elseif buffactive['Copy Image (4+)'] then
+			send_command('cancel 446')
+		end
+	end
+
 	if spell.english:startswith('Utsusemi') then
 		equip(sets.precast.utsusemi)
 	end
