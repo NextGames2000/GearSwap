@@ -5,16 +5,16 @@
   function precast(spell, act)
 
 	-- The below command is used to cancel old shadows if they can not be overwritten by the newly cased Utsusemi.
-if spell.english:startswith('Utsusemi') then
-    if buffactive['Copy Image'] then
-        send_command('cancel 66')
-    elseif buffactive['Copy Image (2)'] then 
-        send_command('cancel 444')
-    elseif buffactive['Copy Image (3)'] then
-        send_command('cancel 445')
-    elseif buffactive['Copy Image (4+)'] then
-        send_command('cancel 446')
-    end
-end
+	if spell.english == "Utsusemi: Ichi" then
+		if buffactive['Copy Image'] then
+			send_command('cancel 66')
+		elseif buffactive['Copy Image (2)'] then 
+			send_command('cancel 444')
+		elseif buffactive['Copy Image (3)'] then
+			send_command('cancel 445')
+		elseif buffactive['Copy Image (4+)'] then
+			send_command('cancel 446')
+		end
+	end
 
 end
