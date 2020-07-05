@@ -62,8 +62,8 @@ function get_sets()
 	-- This is where we will define our midcast sets.  These are sets of gear that get equiped BEFORE the spell or ability lands.
 	sets.midcast = {}
 	sets.midcast.enmity = {
-		ammo="Sapience Orb",
-		head={ name="Naga Somen", augments={'HP+50','VIT+10','Evasion+20',}},
+		ammo="Date Shuriken",
+		head="Genmei Kabuto",
 		body="Emet Harness +1",
 		hands="Kurys Gloves",
 		legs="Zoar Subligar +1",
