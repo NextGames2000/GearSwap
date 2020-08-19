@@ -78,10 +78,10 @@ function get_sets()
 	}
 
 	sets.midcast.elenin = {
-		ammo="Pemphredo Tathlum",
+		ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
 		head={ name="Mochi. Hatsuburi +3", augments={'Enhances "Yonin" and "Innin" effect',}},
 		body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},
-    	hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}},
+		hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}},
 		legs="Gyve Trousers",
 		feet={ name="Mochi. Kyahan +3", augments={'Enh. Ninj. Mag. Acc/Cast Time Red.',}},
 		neck="Baetyl Pendant",
@@ -90,17 +90,17 @@ function get_sets()
 		right_ear="Friomisi Earring",
 		left_ring="Shiva Ring +1",
 		right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
-		back={ name="Andartia's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}},
+		back={ name="Andartia's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','AGI+10','Crit.hit rate+10',}},
 	}
 	
 	sets.midcast.mbnin = {
-		ammo="Pemphredo Tathlum",
+		ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
 		head={ name="Mochi. Hatsuburi +3", augments={'Enhances "Yonin" and "Innin" effect',}},
 		body={ name="Samnuha Coat", augments={'Mag. Acc.+12','"Mag.Atk.Bns."+12','"Dual Wield"+3',}},
-		hands={ name="Herculean Gloves", augments={'"Mag.Atk.Bns."+24','Magic burst dmg.+6%','INT+8',}},
+		hands={ name="Herculean Gloves", augments={'Accuracy+2','AGI+9','Magic burst dmg.+9%','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
 		legs={ name="Herculean Trousers", augments={'"Mag.Atk.Bns."+24','Magic burst dmg.+8%','Mag. Acc.+15',}},
 		feet={ name="Mochi. Kyahan +3", augments={'Enh. Ninj. Mag. Acc/Cast Time Red.',}},
-		neck="Baetyl Pendant",
+		neck={ name="Warder's Charm +1", augments={'Path: A',}},
 		waist="Orpheus's Sash",
 		left_ear="Static Earring",
 		right_ear="Friomisi Earring",
@@ -156,12 +156,12 @@ function get_sets()
 	}
 	
 	sets.midcast.blademetsu = {
-		ammo="Voluspa Tathlum",
+		ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
 		head="Hachiya Hatsu. +3",
 		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
-		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
+		hands={ name="Mochizuki Tekko +3", augments={'Enh. "Ninja Tool Expertise" effect',}},
 		legs={ name="Mochi. Hakama +3", augments={'Enhances "Mijin Gakure" effect',}},
-		feet={ name="Adhe. Gamashes +1", augments={'STR+12','DEX+12','Attack+20',}},
+		feet={ name="Mochi. Kyahan +3", augments={'Enh. Ninj. Mag. Acc/Cast Time Red.',}},
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear="Odr Earring",
@@ -172,15 +172,15 @@ function get_sets()
 	}
 	
 	sets.midcast.bladeshun = {
-		ammo="Voluspa Tathlum",
+		ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
 		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
 		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
 		legs={ name="Rao Haidate +1", augments={'STR+12','DEX+12','Attack+20',}},
-		feet={ name="Adhe. Gamashes +1", augments={'STR+12','DEX+12','Attack+20',}},
+		feet={ name="Ryuo Sune-Ate +1", augments={'STR+12','DEX+12','Accuracy+20',}},
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
-		left_ear="Odr Earring",
+		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
 		right_ear={ name="Lugra Earring +1", augments={'Path: A',}},
 		left_ring="Gere Ring",
 		right_ring="Regal Ring",
@@ -188,12 +188,12 @@ function get_sets()
 	}
 	
 	sets.midcast.bladeten = {
-		ammo="Voluspa Tathlum",
+		ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
 		head="Hachiya Hatsu. +3",
 		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
-		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
+		hands={ name="Mochizuki Tekko +3", augments={'Enh. "Ninja Tool Expertise" effect',}},
 		legs={ name="Mochi. Hakama +3", augments={'Enhances "Mijin Gakure" effect',}},
-		feet={ name="Ryuo Sune-Ate +1", augments={'STR+12','DEX+12','Accuracy+20',}},
+		feet={ name="Mochi. Kyahan +3", augments={'Enh. Ninj. Mag. Acc/Cast Time Red.',}},
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
@@ -201,10 +201,10 @@ function get_sets()
 		left_ring="Gere Ring",
 		right_ring="Regal Ring",
 		back={ name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
-	}
+}	}
 	
 	sets.midcast.bladekamu = {
-		ammo="Voluspa Tathlum",
+		ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
 		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
 		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
@@ -220,7 +220,7 @@ function get_sets()
 	}
 
 	sets.midcast.bladeku = {
-		ammo="Voluspa Tathlum",
+		ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
 		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
 		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
@@ -318,16 +318,16 @@ function get_sets()
 	}
 
 	sets.aftercast.dw0 = {
-		ammo="Date Shuriken",
+		ammo="Seki Shuriken",
 		head="Ken. Jinpachi +1",
 		body="Ken. Samue +1",
 		hands="Ken. Tekko +1",
 		legs="Ken. Hakama +1",
 		feet="Ken. Sune-Ate +1",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
-		waist="Windbuffet Belt +1",
+		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear="Brutal Earring",
-		right_ear="Cessance Earring",
+		right_ear="Telos Earring",
 		left_ring="Gere Ring",
 		right_ring="Epona's Ring",
 		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Damage taken-5%',}},
