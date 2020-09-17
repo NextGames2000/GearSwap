@@ -589,6 +589,14 @@ function midcast(spell, act)
 		equip (sets.midcast.enfnin)
 	end
 
+	if spell.english:startswith('Aisha') then
+		equip (sets.midcast.enfnin)
+	end
+
+	if spell.english:startswith('Yurin') then
+		equip (sets.midcast.enfnin)
+	end
+
 	if spell.type == "WhiteMagic" then
 		equip (sets.midcast.enfnin)
 	end
