@@ -271,34 +271,50 @@ function get_sets()
 		ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
 		head={ name="Mochi. Hatsuburi +3", augments={'Enhances "Yonin" and "Innin" effect',}},
 		body="Gyve Doublet",
-		hands={ name="Herculean Gloves", augments={'"Resist Silence"+8','"Mag.Atk.Bns."+27','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
+		hands={ name="Herculean Gloves", augments={'Accuracy+10','Weapon skill damage +5%','Attack+10',}},
 		legs={ name="Mochi. Hakama +3", augments={'Enhances "Mijin Gakure" effect',}},
-		feet="Hachiya Kyahan +3",
+		feet={ name="Herculean Boots", augments={'Sklchn.dmg.+4%','"Mag.Atk.Bns."+23','Accuracy+9 Attack+9','Mag. Acc.+11 "Mag.Atk.Bns."+11',}},
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist="Orpheus's Sash",
-		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
-		right_ear={ name="Lugra Earring +1", augments={'Path: A',}},
+		left_ear="Friomisi Earring",
+		right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
 		left_ring="Gere Ring",
 		right_ring="Epaminondas's Ring",
-		back={ name="Andartia's Mantle", augments={'STR+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%',}},
+		back={ name="Andartia's Mantle", augments={'STR+20','Mag. Acc+20 /Mag. Dmg.+20','STR+10','Weapon skill damage +10%',}},
 	}
 		
 	sets.midcast.bladeto = {
 		ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
 		head={ name="Mochi. Hatsuburi +3", augments={'Enhances "Yonin" and "Innin" effect',}},
 		body="Gyve Doublet",
-		hands={ name="Herculean Gloves", augments={'"Resist Silence"+8','"Mag.Atk.Bns."+27','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
+		hands={ name="Herculean Gloves", augments={'Accuracy+10','Weapon skill damage +5%','Attack+10',}},
 		legs={ name="Mochi. Hakama +3", augments={'Enhances "Mijin Gakure" effect',}},
-		feet="Hachiya Kyahan +3",
+		feet={ name="Herculean Boots", augments={'Sklchn.dmg.+4%','"Mag.Atk.Bns."+23','Accuracy+9 Attack+9','Mag. Acc.+11 "Mag.Atk.Bns."+11',}},
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist="Orpheus's Sash",
-		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
-		right_ear={ name="Lugra Earring +1", augments={'Path: A',}},
+		left_ear="Friomisi Earring",
+		right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
 		left_ring="Gere Ring",
 		right_ring="Epaminondas's Ring",
-		back={ name="Andartia's Mantle", augments={'STR+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','Weapon skill damage +10%',}},
+		back={ name="Andartia's Mantle", augments={'STR+20','Mag. Acc+20 /Mag. Dmg.+20','STR+10','Weapon skill damage +10%',}},
 	}
 	
+	sets.midcast.savageblade = {
+		ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
+		head="Hachiya Hatsu. +3",
+		body={ name="Herculean Vest", augments={'Weapon skill damage +5%','STR+9','Attack+13',}},
+		hands={ name="Herculean Gloves", augments={'Accuracy+10','Weapon skill damage +5%','Attack+10',}},
+		legs={ name="Mochi. Hakama +3", augments={'Enhances "Mijin Gakure" effect',}},
+		feet={ name="Herculean Boots", augments={'Attack+9','Weapon skill damage +5%','AGI+8','Accuracy+13',}},
+		neck="Fotia Gorget",
+		waist="Fotia Belt",
+		left_ear="Ishvara Earring",
+		right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+		left_ring="Karieyh Ring",
+		right_ring="Epaminondas's Ring",
+		back={ name="Andartia's Mantle", augments={'STR+20','Mag. Acc+20 /Mag. Dmg.+20','STR+10','Weapon skill damage +10%',}},
+	}
+
 	-- This is where we will define our aftercast sets.  These are sets of gear that get equiped AFTER the spell or ability is used.  Normally this is used to put you back into your current TP set.
 	sets.aftercast = {}
 	sets.aftercast.dw40 = {
@@ -331,7 +347,7 @@ function get_sets()
 		left_ring="Gere Ring",
 		right_ring="Epona's Ring",
 		back={ name="Andartia's Mantle", augments={'AGI+20','Eva.+20 /Mag. Eva.+20','Evasion+10','"Dual Wield"+10','Evasion+15',}},
-}	}
+	}
 
 	sets.aftercast.dw0 = {
 		ammo="Date Shuriken",
@@ -351,7 +367,7 @@ function get_sets()
 
 	sets.aftercast.accuracy = {
 	    ammo="Yamarang",
-		head="Ken. Jinpachi +1",
+		head={ name="Alhazen Hat +1", augments={'Path: A',}},
 		body="Ken. Samue +1",
 		hands="Ken. Tekko +1",
 		legs="Ken. Hakama +1",
@@ -367,7 +383,7 @@ function get_sets()
 
 	sets.aftercast.evasion = {
 		ammo="Yamarang",
-		head="Malignance Chapeau",
+		head={ name="Alhazen Hat +1", augments={'Path: A',}},
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
@@ -510,6 +526,14 @@ end
 		equip(sets.precast.fc)
 	end
 	
+	if spell.type == "WhiteMagic" then
+		equip (sets.precast.fc)
+	end
+
+	if spell.type == "BlackMagic" then
+		equip (sets.precast.fc)
+	end
+
 	if spell.type == "Trust" then
 		equip(sets.precast.fc)
 	end
@@ -562,6 +586,14 @@ function midcast(spell, act)
 	end
 
 	if spell.english:startswith('Jubaku') then
+		equip (sets.midcast.enfnin)
+	end
+
+	if spell.type == "WhiteMagic" then
+		equip (sets.midcast.enfnin)
+	end
+
+	if spell.type == "BlackMagic" then
 		equip (sets.midcast.enfnin)
 	end
 
@@ -643,6 +675,10 @@ function midcast(spell, act)
 
 	if spell.english == "Blade: Retsu" then
 		equip (sets.midcast.bladeten)
+	end
+
+	if spell.english == "Savage Blade" then
+		equip (sets.midcast.savageblade)
 	end
 
 	if spell.type == "Trust" then
