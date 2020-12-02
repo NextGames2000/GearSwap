@@ -221,33 +221,33 @@ function get_sets()
 	
 	sets.midcast.bladekamu = {
 		ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
-		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
-		body={ name="Agony Jerkin +1", augments={'Path: A',}},
-		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
-		legs={ name="Mochi. Hakama +3", augments={'Enhances "Mijin Gakure" effect',}},
-		feet={ name="Ryuo Sune-Ate +1", augments={'STR+12','DEX+12','Accuracy+20',}},
-		neck="Fotia Gorget",
-		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
-		left_ear="Brutal Earring",
-		right_ear={ name="Lugra Earring +1", augments={'Path: A',}},
-		left_ring="Gere Ring",
-		right_ring="Regal Ring",
-		back={ name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
-	}
-
-	sets.midcast.bladeku = {
-		ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
 		head="Hachiya Hatsu. +3",
 		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
 		legs={ name="Mochi. Hakama +3", augments={'Enhances "Mijin Gakure" effect',}},
-		feet={ name="Mochi. Kyahan +3", augments={'Enh. Ninj. Mag. Acc/Cast Time Red.',}},
-		neck="Fotia Gorget",
+		feet={ name="Ryuo Sune-Ate +1", augments={'STR+12','DEX+12','Accuracy+20',}},
+		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear="Brutal Earring",
 		right_ear={ name="Lugra Earring +1", augments={'Path: A',}},
 		left_ring="Gere Ring",
 		right_ring="Epona's Ring",
+		back={ name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
+	}
+
+	sets.midcast.bladeku = {
+		ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
+		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
+		body={ name="Agony Jerkin +1", augments={'Path: A',}},
+		hands={ name="Mochizuki Tekko +3", augments={'Enh. "Ninja Tool Expertise" effect',}},
+		legs={ name="Mochi. Hakama +3", augments={'Enhances "Mijin Gakure" effect',}},
+		feet={ name="Mochi. Kyahan +3", augments={'Enh. Ninj. Mag. Acc/Cast Time Red.',}},
+		neck="Fotia Gorget",
+		waist="Fotia Belt",
+		left_ear="Mache Earring +1",
+		right_ear={ name="Lugra Earring +1", augments={'Path: A',}},
+		left_ring="Gere Ring",
+		right_ring="Regal Ring",
 		back={ name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
 	}
 
@@ -306,11 +306,11 @@ function get_sets()
 		hands={ name="Herculean Gloves", augments={'Accuracy+10','Weapon skill damage +5%','Attack+10',}},
 		legs={ name="Mochi. Hakama +3", augments={'Enhances "Mijin Gakure" effect',}},
 		feet={ name="Herculean Boots", augments={'Attack+9','Weapon skill damage +5%','AGI+8','Accuracy+13',}},
-		neck="Fotia Gorget",
-		waist="Fotia Belt",
-		left_ear="Ishvara Earring",
+		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
+		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+		left_ear={ name="Lugra Earring +1", augments={'Path: A',}},
 		right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
-		left_ring="Karieyh Ring",
+		left_ring="Regal Ring",
 		right_ring="Epaminondas's Ring",
 		back={ name="Andartia's Mantle", augments={'STR+20','Mag. Acc+20 /Mag. Dmg.+20','STR+10','Weapon skill damage +10%',}},
 	}
@@ -350,40 +350,40 @@ function get_sets()
 	}
 
 	sets.aftercast.dw0 = {
-		ammo="Seki Shuriken",
-		head={ name="Ryuo Somen +1", augments={'HP+65','"Store TP"+5','"Subtle Blow"+8',}},
-		body="Malignance Tabard",
-		hands="Malignance Gloves",
-		legs="Malignance Tights",
-		feet="Malignance Boots",
-		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
-		waist="Gerdr Belt +1",
-		left_ear="Telos Earring",
-		right_ear="Dedition Earring",
-		left_ring="Chirich Ring +1",
-		right_ring="Chirich Ring +1",
-		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Damage taken-5%',}},
-	}
-
-	sets.aftercast.accuracy = {
-	    ammo="Yamarang",
-		head={ name="Alhazen Hat +1", augments={'Path: A',}},
+		ammo="Date Shuriken",
+		head="Ken. Jinpachi +1",
 		body="Ken. Samue +1",
 		hands="Ken. Tekko +1",
 		legs="Ken. Hakama +1",
 		feet="Ken. Sune-Ate +1",
-		neck="Ninja Nodowa +2",
-		waist="Olseni Belt",
+		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
+		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+		left_ear="Telos Earring",
+		right_ear="Brutal Earring",
+		left_ring="Gere Ring",
+		right_ring="Epona's Ring",
+		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Damage taken-5%',}},
+	}
+
+	sets.aftercast.accuracy = {
+		ammo="Date Shuriken",
+		head="Ken. Jinpachi +1",
+		body="Ken. Samue +1",
+		hands="Ken. Tekko +1",
+		legs="Ken. Hakama +1",
+		feet="Ken. Sune-Ate +1",
+		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
+		waist={ name="Kentarch Belt +1", augments={'Path: A',}},
 		left_ear="Mache Earring +1",
 		right_ear="Mache Earring +1",
-		left_ring="Chirich Ring +1",
+		left_ring={ name="Cacoethic Ring +1", augments={'Path: A',}},
 		right_ring="Chirich Ring +1",
 		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Damage taken-5%',}},
 	}
 
 	sets.aftercast.evasion = {
-		ammo="Yamarang",
-		head={ name="Alhazen Hat +1", augments={'Path: A',}},
+		ammo="Date Shuriken",
+		head="Malignance Chapeau",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
@@ -391,7 +391,7 @@ function get_sets()
 		neck="Combatant's Torque",
 		waist="Svelt. Gouriz +1",
 		left_ear="Eabani Earring",
-		right_ear="Ran Earring",
+		right_ear="Infused Earring",
 		left_ring="Vengeful Ring",
 		right_ring="Hizamaru Ring",
 		back={ name="Andartia's Mantle", augments={'AGI+20','Eva.+20 /Mag. Eva.+20','Evasion+10','"Dual Wield"+10','Evasion+15',}},
@@ -407,7 +407,7 @@ function get_sets()
 		neck="Inq. Bead Necklace",
 		waist="Engraved Belt",
 		left_ear="Sanare Earring",
-		right_ear="Odnowa Earring +1",
+		right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
 		left_ring="Vexer Ring +1",
 		right_ring="Defending Ring",
 		back="Moonlight Cape",
@@ -420,13 +420,13 @@ function get_sets()
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
-		neck="Warder's Charm +1",
+		neck={ name="Warder's Charm +1", augments={'Path: A',}},
 		waist="Engraved Belt",
-		left_ear="Sanare Earring",
+		left_ear="Flashward Earring",
 		right_ear="Eabani Earring",
 		left_ring="Purity Ring",
 		right_ring="Vengeful Ring",
-		back={ name="Andartia's Mantle", augments={'AGI+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Damage taken-5%',}},
+		back={ name="Andartia's Mantle", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Mag. Evasion+15',}},
 	}
 end
 
@@ -687,6 +687,34 @@ function midcast(spell, act)
 
 	if spell.english == "Savage Blade" then
 		equip (sets.midcast.savageblade)
+	end
+
+	if spell.english == "Aeolian Edge" then
+		equip (sets.midcast.savageblade)
+	end
+
+	if spell.english == "Tachi: Ageha" then
+		equip (sets.midcast.enfnin)
+	end
+
+	if spell.english == "Tachi: Kasha" then
+		equip (sets.midcast.savageblade)
+	end
+
+	if spell.english == "Tachi: Koki" then
+		equip (sets.midcast.bladechi)
+	end
+
+	if spell.english == "Tachi: Jinpu" then
+		equip (sets.midcast.bladeten)
+	end
+
+	if spell.english == "Tachi: Kagero" then
+		equip (sets.midcast.bladechi)
+	end
+
+	if spell.english == "Tachi:Gotenf " then
+		equip (sets.midcast.bladeten)
 	end
 
 	if spell.type == "Trust" then

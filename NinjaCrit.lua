@@ -315,6 +315,22 @@ function get_sets()
 		back={ name="Andartia's Mantle", augments={'STR+20','Mag. Acc+20 /Mag. Dmg.+20','STR+10','Weapon skill damage +10%',}},
 	}
 
+	sets.midcast.edge = {
+		ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
+		head={ name="Mochi. Hatsuburi +3", augments={'Enhances "Yonin" and "Innin" effect',}},
+		body="Gyve Doublet",
+		hands={ name="Herculean Gloves", augments={'"Resist Silence"+8','"Mag.Atk.Bns."+27','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
+		legs={ name="Mochi. Hakama +3", augments={'Enhances "Mijin Gakure" effect',}},
+		feet={ name="Herculean Boots", augments={'Sklchn.dmg.+4%','"Mag.Atk.Bns."+23','Accuracy+9 Attack+9','Mag. Acc.+11 "Mag.Atk.Bns."+11',}},
+		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
+		waist="Orpheus's Sash",
+		left_ear="Friomisi Earring",
+		right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+		left_ring="Gere Ring",
+		right_ring="Epaminondas's Ring",
+		back={ name="Andartia's Mantle", augments={'STR+20','Mag. Acc+20 /Mag. Dmg.+20','STR+10','Weapon skill damage +10%',}},
+	}
+
 	-- This is where we will define our aftercast sets.  These are sets of gear that get equiped AFTER the spell or ability is used.  Normally this is used to put you back into your current TP set.
 	sets.aftercast = {}
 	sets.aftercast.dw40 = {
@@ -350,19 +366,20 @@ function get_sets()
 	}
 
 	sets.aftercast.dw0 = {
-		ammo="Seki Shuriken",
-		head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3',}},
+		ammo="Happo Shuriken +1",
+		head="Ken. Jinpachi +1",
 		body="Ken. Samue +1",
-		hands={ name="Herculean Gloves", augments={'Accuracy+14','"Triple Atk."+4','STR+8','Attack+15',}},
-		legs={ name="Samnuha Tights", augments={'STR+10','DEX+10','"Dbl.Atk."+3','"Triple Atk."+3',}},
-		feet={ name="Herculean Boots", augments={'Mag. Acc.+4','"Fast Cast"+6','INT+7',}},
-		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
-		waist="Windbuffet Belt +1",
-		left_ear="Brutal Earring",
-		right_ear="Cessance Earring",
-		left_ring="Gere Ring",
-		right_ring="Epona's Ring",
-		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Damage taken-5%',}},
+		hands="Ken. Tekko +1",
+		legs="Ken. Hakama +1",
+		feet="Ken. Sune-Ate +1",
+		neck="Nefarious Collar",
+		waist="Gerdr Belt +1",
+		left_ear="Odr Earring",
+		right_ear="Brutal Earring",
+		left_ring="Mummu Ring",
+		right_ring="Begrudging Ring",
+		back={ name="Andartia's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','AGI+10','Crit.hit rate+10',}},
+
 	}
 
 	sets.aftercast.accuracy = {
