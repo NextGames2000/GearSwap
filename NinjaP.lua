@@ -237,17 +237,17 @@ function get_sets()
 
 	sets.midcast.bladeku = {
 		ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
-		head="Hachiya Hatsu. +3",
-		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
-		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
-		legs={ name="Mochi. Hakama +3", augments={'Enhances "Mijin Gakure" effect',}},
-		feet={ name="Mochi. Kyahan +3", augments={'Enh. Ninj. Mag. Acc/Cast Time Red.',}},
-		neck="Fotia Gorget",
-		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+		head={ name="Blistering Sallet +1", augments={'Path: A',}},
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		legs={ name="Rao Haidate +1", augments={'STR+12','DEX+12','Attack+20',}},
+		feet={ name="Ryuo Sune-Ate +1", augments={'STR+12','DEX+12','Accuracy+20',}},
+		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
+		waist="Fotia Belt",
 		left_ear="Brutal Earring",
 		right_ear={ name="Lugra Earring +1", augments={'Path: A',}},
 		left_ring="Gere Ring",
-		right_ring="Epona's Ring",
+		right_ring="Regal Ring",
 		back={ name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
 	}
 
