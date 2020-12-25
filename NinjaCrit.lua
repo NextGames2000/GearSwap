@@ -64,17 +64,17 @@ function get_sets()
 	sets.midcast.enmity = {
 		ammo="Date Shuriken",
 		head="Genmei Kabuto",
-		body="Emet Harness +1",
+		body={ name="Emet Harness +1", augments={'Path: A',}},
 		hands="Kurys Gloves",
-		legs="Zoar Subligar +1",
+		legs={ name="Zoar Subligar +1", augments={'Path: A',}},
 		feet={ name="Mochi. Kyahan +3", augments={'Enh. Ninj. Mag. Acc/Cast Time Red.',}},
-		neck="Unmoving Collar +1",
+		neck="Moonlight Necklace",
 		waist="Trance Belt",
 		left_ear="Trux Earring",
 		right_ear="Cryptic Earring",
 		left_ring="Supershear Ring",
 		right_ring="Eihwaz Ring",
-		back={ name="Andartia's Mantle", augments={'AGI+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Damage taken-5%',}},
+		back={ name="Andartia's Mantle", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Mag. Evasion+15',}},
 	}
 
 	sets.midcast.elenin = {
@@ -379,7 +379,6 @@ function get_sets()
 		left_ring="Mummu Ring",
 		right_ring="Begrudging Ring",
 		back={ name="Andartia's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','AGI+10','Crit.hit rate+10',}},
-
 	}
 
 	sets.aftercast.accuracy = {
@@ -399,13 +398,13 @@ function get_sets()
 	}
 
 	sets.aftercast.evasion = {
-		ammo="Date Shuriken",
+		ammo="Yamarang",
 		head="Malignance Chapeau",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
-		neck="Combatant's Torque",
+		neck={ name="Bathy Choker +1", augments={'Path: A',}},
 		waist="Svelt. Gouriz +1",
 		left_ear="Eabani Earring",
 		right_ear="Infused Earring",
@@ -437,7 +436,7 @@ function get_sets()
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
-		neck={ name="Warder's Charm +1", augments={'Path: A',}},
+		neck="Moonlight Necklace",
 		waist="Engraved Belt",
 		left_ear="Flashward Earring",
 		right_ear="Eabani Earring",

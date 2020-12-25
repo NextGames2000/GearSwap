@@ -64,17 +64,17 @@ function get_sets()
 	sets.midcast.enmity = {
 		ammo="Date Shuriken",
 		head="Genmei Kabuto",
-		body="Emet Harness +1",
+		body={ name="Emet Harness +1", augments={'Path: A',}},
 		hands="Kurys Gloves",
-		legs="Zoar Subligar +1",
+		legs={ name="Zoar Subligar +1", augments={'Path: A',}},
 		feet={ name="Mochi. Kyahan +3", augments={'Enh. Ninj. Mag. Acc/Cast Time Red.',}},
-		neck="Unmoving Collar +1",
+		neck="Moonlight Necklace",
 		waist="Trance Belt",
 		left_ear="Trux Earring",
 		right_ear="Cryptic Earring",
 		left_ring="Supershear Ring",
 		right_ring="Eihwaz Ring",
-		back={ name="Andartia's Mantle", augments={'AGI+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Damage taken-5%',}},
+		back={ name="Andartia's Mantle", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Mag. Evasion+15',}},
 	}
 
 	sets.midcast.elenin = {
@@ -315,10 +315,26 @@ function get_sets()
 		back={ name="Andartia's Mantle", augments={'STR+20','Mag. Acc+20 /Mag. Dmg.+20','STR+10','Weapon skill damage +10%',}},
 	}
 
+	sets.midcast.edge = {
+		ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
+		head={ name="Mochi. Hatsuburi +3", augments={'Enhances "Yonin" and "Innin" effect',}},
+		body="Gyve Doublet",
+		hands={ name="Herculean Gloves", augments={'"Resist Silence"+8','"Mag.Atk.Bns."+27','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
+		legs={ name="Mochi. Hakama +3", augments={'Enhances "Mijin Gakure" effect',}},
+		feet={ name="Herculean Boots", augments={'Sklchn.dmg.+4%','"Mag.Atk.Bns."+23','Accuracy+9 Attack+9','Mag. Acc.+11 "Mag.Atk.Bns."+11',}},
+		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
+		waist="Orpheus's Sash",
+		left_ear="Friomisi Earring",
+		right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+		left_ring="Gere Ring",
+		right_ring="Epaminondas's Ring",
+		back={ name="Andartia's Mantle", augments={'STR+20','Mag. Acc+20 /Mag. Dmg.+20','STR+10','Weapon skill damage +10%',}},
+	}
+
 	-- This is where we will define our aftercast sets.  These are sets of gear that get equiped AFTER the spell or ability is used.  Normally this is used to put you back into your current TP set.
 	sets.aftercast = {}
 	sets.aftercast.dw40 = {
-		ammo="Date Shuriken",
+		ammo="Seki Shuriken",
 		head={ name="Ryuo Somen +1", augments={'HP+65','"Store TP"+5','"Subtle Blow"+8',}},
 		body={ name="Mochi. Chainmail +3", augments={'Enhances "Sange" effect',}},
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
@@ -382,13 +398,13 @@ function get_sets()
 	}
 
 	sets.aftercast.evasion = {
-		ammo="Date Shuriken",
+		ammo="Yamarang",
 		head="Malignance Chapeau",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
-		neck="Combatant's Torque",
+		neck={ name="Bathy Choker +1", augments={'Path: A',}},
 		waist="Svelt. Gouriz +1",
 		left_ear="Eabani Earring",
 		right_ear="Infused Earring",
@@ -420,7 +436,7 @@ function get_sets()
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
-		neck={ name="Warder's Charm +1", augments={'Path: A',}},
+		neck="Moonlight Necklace",
 		waist="Engraved Belt",
 		left_ear="Flashward Earring",
 		right_ear="Eabani Earring",

@@ -64,17 +64,17 @@ function get_sets()
 	sets.midcast.enmity = {
 		ammo="Date Shuriken",
 		head="Genmei Kabuto",
-		body="Emet Harness +1",
+		body={ name="Emet Harness +1", augments={'Path: A',}},
 		hands="Kurys Gloves",
-		legs="Zoar Subligar +1",
+		legs={ name="Zoar Subligar +1", augments={'Path: A',}},
 		feet={ name="Mochi. Kyahan +3", augments={'Enh. Ninj. Mag. Acc/Cast Time Red.',}},
-		neck="Unmoving Collar +1",
+		neck="Moonlight Necklace",
 		waist="Trance Belt",
 		left_ear="Trux Earring",
 		right_ear="Cryptic Earring",
 		left_ring="Supershear Ring",
 		right_ring="Eihwaz Ring",
-		back={ name="Andartia's Mantle", augments={'AGI+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Damage taken-5%',}},
+		back={ name="Andartia's Mantle", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Mag. Evasion+15',}},
 	}
 
 	sets.midcast.elenin = {
@@ -157,11 +157,11 @@ function get_sets()
 
 	sets.midcast.bladehi = {
 		ammo="Yetshila +1",
-		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
+		head="Hachiya Hatsu. +3",
 		body="Ken. Samue +1",
 		hands={ name="Ryuo Tekko +1", augments={'DEX+12','Accuracy+25','"Dbl.Atk."+4',}},
 		legs={ name="Mochi. Hakama +3", augments={'Enhances "Mijin Gakure" effect',}},
-		feet={ name="Adhe. Gamashes +1", augments={'STR+12','DEX+12','Attack+20',}},
+		feet="Mummu Gamash. +2",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear="Odr Earring",
@@ -174,16 +174,16 @@ function get_sets()
 	sets.midcast.blademetsu = {
 		ammo="Aurgelmir Orb",
 		head="Hachiya Hatsu. +3",
-		body={ name="Agony Jerkin +1", augments={'Path: A',}},
-		hands={ name="Mochizuki Tekko +3", augments={'Enh. "Ninja Tool Expertise" effect',}},
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
 		legs={ name="Mochi. Hakama +3", augments={'Enhances "Mijin Gakure" effect',}},
-		feet={ name="Mochi. Kyahan +3", augments={'Enh. Ninj. Mag. Acc/Cast Time Red.',}},
+		feet="Ken. Sune-Ate +1",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear="Odr Earring",
 		right_ear={ name="Lugra Earring +1", augments={'Path: A',}},
 		left_ring="Gere Ring",
-		right_ring="Regal Ring",
+		right_ring="Epaminondas's Ring",
 		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}},
 	}
 	
@@ -206,23 +206,23 @@ function get_sets()
 	sets.midcast.bladeten = {
 		ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
 		head="Hachiya Hatsu. +3",
-		body={ name="Agony Jerkin +1", augments={'Path: A',}},
-		hands={ name="Mochizuki Tekko +3", augments={'Enh. "Ninja Tool Expertise" effect',}},
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
 		legs={ name="Mochi. Hakama +3", augments={'Enhances "Mijin Gakure" effect',}},
-		feet={ name="Mochi. Kyahan +3", augments={'Enh. Ninj. Mag. Acc/Cast Time Red.',}},
+		feet={ name="Ryuo Sune-Ate +1", augments={'STR+12','DEX+12','Accuracy+20',}},
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
 		right_ear={ name="Lugra Earring +1", augments={'Path: A',}},
 		left_ring="Gere Ring",
-		right_ring="Regal Ring",
+		right_ring="Epaminondas's Ring",
 		back={ name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
 	}
 	
 	sets.midcast.bladekamu = {
 		ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
 		head="Hachiya Hatsu. +3",
-		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
+		body="Ken. Samue +1",
 		hands="Malignance Gloves",
 		legs={ name="Mochi. Hakama +3", augments={'Enhances "Mijin Gakure" effect',}},
 		feet={ name="Ryuo Sune-Ate +1", augments={'STR+12','DEX+12','Accuracy+20',}},
@@ -398,13 +398,13 @@ function get_sets()
 	}
 
 	sets.aftercast.evasion = {
-		ammo="Date Shuriken",
+		ammo="Yamarang",
 		head="Malignance Chapeau",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
-		neck="Combatant's Torque",
+		neck={ name="Bathy Choker +1", augments={'Path: A',}},
 		waist="Svelt. Gouriz +1",
 		left_ear="Eabani Earring",
 		right_ear="Infused Earring",
@@ -436,7 +436,7 @@ function get_sets()
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
-		neck={ name="Warder's Charm +1", augments={'Path: A',}},
+		neck="Moonlight Necklace",
 		waist="Engraved Belt",
 		left_ear="Flashward Earring",
 		right_ear="Eabani Earring",
