@@ -74,7 +74,7 @@ function get_sets()
 		right_ear="Cryptic Earring",
 		left_ring="Supershear Ring",
 		right_ring="Eihwaz Ring",
-		back={ name="Andartia's Mantle", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Mag. Evasion+15',}},
+		back={ name="Andartia's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','System: 1 ID: 640 Val: 4',}},
 	}
 
 	sets.midcast.elenin = {
@@ -143,7 +143,7 @@ function get_sets()
 	
 	sets.midcast.waltz = {
 		ammo="Yamarang",
-		head="Mummu Bonnet +2",
+		head={ name="Herculean Helm", augments={'"Waltz" potency +11%','CHR+1',}},
 		hands={ name="Herculean Gloves", augments={'Accuracy+16 Attack+16','"Waltz" potency +11%','MND+6',}},
 		legs={ name="Herculean Trousers", augments={'"Waltz" potency +11%','INT+4',}},
 		feet={ name="Herculean Boots", augments={'Attack+7','"Waltz" potency +11%','AGI+6',}},
@@ -251,11 +251,11 @@ function get_sets()
 		head={ name="Mochi. Hatsuburi +3", augments={'Enhances "Yonin" and "Innin" effect',}},
 		body="Nyame Mail",
 		hands="Nyame Gauntlets",
-		legs={ name="Mochi. Hakama +3", augments={'Enhances "Mijin Gakure" effect',}},
+		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist="Orpheus's Sash",
-		left_ear="Friomisi Earring",
+		left_ear={ name="Lugra Earring +1", augments={'Path: A',}},
 		right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
 		left_ring="Gere Ring",
 		right_ring="Epaminondas's Ring",
@@ -281,10 +281,10 @@ function get_sets()
 	sets.midcast.edge = {
 		ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
 		head={ name="Mochi. Hatsuburi +3", augments={'Enhances "Yonin" and "Innin" effect',}},
-		body="Gyve Doublet",
-		hands={ name="Herculean Gloves", augments={'"Resist Silence"+8','"Mag.Atk.Bns."+27','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
 		legs={ name="Mochi. Hakama +3", augments={'Enhances "Mijin Gakure" effect',}},
-		feet={ name="Herculean Boots", augments={'Sklchn.dmg.+4%','"Mag.Atk.Bns."+23','Accuracy+9 Attack+9','Mag. Acc.+11 "Mag.Atk.Bns."+11',}},
+		feet="Nyame Sollerets",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist="Orpheus's Sash",
 		left_ear="Friomisi Earring",
@@ -313,17 +313,17 @@ function get_sets()
 	sets.midcast.truestrike = {
 		ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
 		head="Hachiya Hatsu. +3",
-		body={ name="Herculean Vest", augments={'Weapon skill damage +5%','STR+9','Attack+13',}},
-		hands={ name="Herculean Gloves", augments={'Accuracy+10','Weapon skill damage +5%','Attack+10',}},
-		legs={ name="Mochi. Hakama +3", augments={'Enhances "Mijin Gakure" effect',}},
-		feet={ name="Herculean Boots", augments={'Attack+9','Weapon skill damage +5%','AGI+8','Accuracy+13',}},
+		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
+		hands={ name="Mochizuki Tekko +3", augments={'Enh. "Ninja Tool Expertise" effect',}},
+		legs={ name="Rao Haidate +1", augments={'STR+12','DEX+12','Attack+20',}},
+		feet={ name="Ryuo Sune-Ate +1", augments={'STR+12','DEX+12','Accuracy+20',}},
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear={ name="Lugra Earring +1", augments={'Path: A',}},
 		right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
-		left_ring="Regal Ring",
-		right_ring="Epaminondas's Ring",
-		back={ name="Andartia's Mantle", augments={'STR+20','Mag. Acc+20 /Mag. Dmg.+20','STR+10','Weapon skill damage +10%',}},
+		left_ring="Gere Ring",
+		right_ring="Regal Ring",
+		back={ name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
 	}
 
 	-- This is where we will define our aftercast sets.  These are sets of gear that get equiped AFTER the spell or ability is used.  Normally this is used to put you back into your current TP set.
@@ -369,11 +369,11 @@ function get_sets()
 		feet="Ken. Sune-Ate +1",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
-		left_ear="Dedition Earring",
-		right_ear="Telos Earring",
+		left_ear="Cessance Earring",
+		right_ear="Brutal Earring",
 		left_ring="Gere Ring",
 		right_ring="Epona's Ring",
-		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Damage taken-5%',}},
+		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Damage taken-5%',}},
 	}
 
 	sets.aftercast.accuracy = {
@@ -385,8 +385,8 @@ function get_sets()
 		feet="Ken. Sune-Ate +1",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist={ name="Kentarch Belt +1", augments={'Path: A',}},
-		left_ear="Mache Earring +1",
-		right_ear={ name="Domin. Earring +1", augments={'Path: A',}},
+		left_ear={ name="Domin. Earring +1", augments={'Path: A',}},
+		right_ear="Mache Earring +1",
 		left_ring={ name="Cacoethic Ring +1", augments={'Path: A',}},
 		right_ring="Chirich Ring +1",
 		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Damage taken-5%',}},
@@ -421,7 +421,7 @@ function get_sets()
 		right_ear="Flashward Earring",
 		left_ring="Purity Ring",
 		right_ring="Vengeful Ring",
-		back={ name="Andartia's Mantle", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Mag. Evasion+15',}},
+		back={ name="Andartia's Mantle", augments={'DEX+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Store TP"+10','Mag. Evasion+15',}},
 	}
 
 	sets.aftercast.magicdef = {
@@ -431,13 +431,13 @@ function get_sets()
 		hands="Mpaca's Gloves",
 		legs="Mpaca's Hose",
 		feet="Mpaca's Boots",
-		neck={ name="Bathy Choker +1", augments={'Path: A',}},
+		neck="Inq. Bead Necklace",
 		waist="Engraved Belt",
-		left_ear="Eabani Earring",
+		left_ear="Sanare Earring",
 		right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
-		left_ring="Purity Ring",
+		left_ring="Vexer Ring +1",
 		right_ring="Defending Ring",
-		back={ name="Andartia's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','System: 1 ID: 640 Val: 4',}},
+		back="Moonlight Cape",
 	}
 	
 end
@@ -726,6 +726,10 @@ function midcast(spell, act)
 	end
 
 	if spell.english == "True Strike" then
+		equip (sets.midcast.truestrike)
+	end
+
+	if spell.english == "Judgment" then
 		equip (sets.midcast.truestrike)
 	end
 

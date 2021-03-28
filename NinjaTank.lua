@@ -331,10 +331,10 @@ function get_sets()
 	sets.aftercast.dw40 = {
 		ammo="Date Shuriken",
 		head={ name="Ryuo Somen +1", augments={'HP+65','"Store TP"+5','"Subtle Blow"+8',}},
-		body="Malignance Tabard",
-		hands="Malignance Gloves",
-		legs="Malignance Tights",
-		feet="Malignance Boots",
+		body="Ken. Samue +1",
+		hands="Ken. Tekko +1",
+		legs="Ken. Hakama +1",
+		feet="Ken. Sune-Ate +1",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist="Shetal Stone",
 		left_ear="Eabani Earring",
@@ -346,11 +346,11 @@ function get_sets()
 	
 	sets.aftercast.dw20 = {
 		ammo="Date Shuriken",
-		head="Malignance Chapeau",
-		body="Malignance Tabard",
-		hands="Malignance Gloves",
-		legs="Malignance Tights",
-		feet="Malignance Boots",
+		head="Ken. Jinpachi +1",
+		body="Ken. Samue +1",
+		hands="Ken. Tekko +1",
+		legs="Ken. Hakama +1",
+		feet="Ken. Sune-Ate +1",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist="Shetal Stone",
 		left_ear="Eabani Earring",
@@ -361,19 +361,19 @@ function get_sets()
 	}
 
 	sets.aftercast.dw0 = {
-		ammo="Date Shuriken",
+		ammo="Yamarang",
 		head="Malignance Chapeau",
-		body="Malignance Tabard",
+		body="Mpaca's Doublet",
 		hands="Malignance Gloves",
-		legs="Malignance Tights",
+		legs="Mpaca's Hose",
 		feet="Malignance Boots",
-		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
-		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
-		left_ear="Cessance Earring",
-		right_ear="Brutal Earring",
-		left_ring="Gere Ring",
-		right_ring="Epona's Ring",
-		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Damage taken-5%',}},
+		neck={ name="Bathy Choker +1", augments={'Path: A',}},
+		waist="Engraved Belt",
+		left_ear="Eabani Earring",
+		right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+		left_ring="Vengeful Ring",
+		right_ring={ name="Gelatinous Ring +1", augments={'Path: A',}},
+		back={ name="Andartia's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','System: 1 ID: 640 Val: 4',}},
 	}
 
 	sets.aftercast.accuracy = {
