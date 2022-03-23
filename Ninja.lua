@@ -1,11 +1,41 @@
-	--  Welcome to Logical's Ninja Lua.  This Lua is used for changing gear during precast and midcast and then swapping to the appropriate set for aftercast.
-	--  It will also cancel shadows for you when necessary to recast new shadows.
-	--  Please refer to my video on my NextGames YouTube channel for how to properly utilize this LUA.  
+--  Welcome to Logical's Ninja Lua.  This Lua is used for changing gear during precast and midcast and then swapping to the appropriate set for aftercast.
+--  It will also cancel shadows for you when necessary to recast new shadows.
+--  Thanks to Bulbafett on the NextGames Discord for helping me add the new Ninja Information section!
+--  Please refer to my video on my NextGames YouTube channel for how to properly utilize this LUA.  
 
-	-- This is what sets the initial set that you normally want to be in by default.
-	tp_mode = 'dw0'
-    mb_mode = 'mbnin'
-	
+-- This is what sets the initial set that you normally want to be in by default.
+tp_mode = 'dw0'
+mb_mode = 'mbnin'
+
+-- This is what sets up the Ninja Information Section.
+shika = 0
+inofu = 0
+chono = 0
+shihei = 0 
+utsubuff = "\\cs(255,0,0)0"
+
+gearswap_box = function()
+  str = '           \\cs(130,130,130)NINJA\\cr\n'
+  str = str..' Offense Mode:\\cs(255,150,100)   '..tp_mode..'\\cr\n'
+  str = str..' Casting Mode:\\cs(255,150,100)   '..mb_mode..'\\cr\n'
+  str = str..'  Ino(E): '..inofu..'\\cs(255,255,255)   Shika(B): '..shika..'\\cr\n'
+  str = str..'Cho(D): '..chono.."\\cs(255,255,255)  Shihei(U): "..shihei.."\\cr\n"
+  str = str..'Utsusemi Shadows: '..utsubuff.."\\cr\n"
+  return str
+end
+
+-- This is what determines the starting location of the Ninja Information Section.
+-- Update the X, Y positions to change where this box defaults. Once loaded the box is dragable. 
+gearswap_box_config = {pos={x=20,y=240},padding=8,text={font='sans-serif',size=10,stroke={width=2,alpha=255},Fonts={'sans-serif'},},bg={alpha=0},flags={}}
+gearswap_jobbox = texts.new(gearswap_box_config)
+
+function user_setup()
+	check_tool_count()
+	gearswap_jobbox:text(gearswap_box())		
+	gearswap_jobbox:show()
+end
+
+
 function self_command(command)
 	 local args = split_args(command)
 		if args[1] == 'tp' then
@@ -25,25 +55,9 @@ end
 
 function get_sets()
 
-	-- This is where we will define our precast sets.  These are sets of gear that get equiped BEFORE the spell or ability is used.
+-- This is where we will define our precast sets.  These are sets of gear that get equiped BEFORE the spell or ability is used.
 	sets.precast = {}
 	sets.precast.fc = {
-		ammo="Sapience Orb",
-		head={ name="Herculean Helm", augments={'Accuracy+13','"Fast Cast"+6',}},
-		body={ name="Adhemar Jacket +1", augments={'HP+105','"Fast Cast"+10','Magic dmg. taken -4',}},
-		hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}},
-		legs={ name="Herculean Trousers", augments={'"Waltz" potency +11%','INT+4',}},
-		feet="Hattori Kyahan +1",
-		neck="Orunmila's Torque",
-		waist="Oneiros Belt",
-		left_ear="Loquac. Earring",
-		right_ear="Enchntr. Earring +1",
-		left_ring="Rahab Ring",
-		right_ring="Kishar Ring",
-		back={ name="Andartia's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10',}},
-	}
-	
-	sets.precast.utsusemi = {
 		ammo="Sapience Orb",
 		head={ name="Herculean Helm", augments={'Accuracy+13','"Fast Cast"+6',}},
 		body={ name="Adhemar Jacket +1", augments={'HP+105','"Fast Cast"+10','Magic dmg. taken -4',}},
@@ -59,11 +73,27 @@ function get_sets()
 		back={ name="Andartia's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10',}},
 	}
 	
-	-- This is where we will define our midcast sets.  These are sets of gear that get equiped BEFORE the spell or ability lands.
+	sets.precast.utsusemi = {
+		ammo="Sapience Orb",
+		head={ name="Herculean Helm", augments={'Accuracy+13','"Fast Cast"+6',}},
+		body={ name="Adhemar Jacket +1", augments={'HP+105','"Fast Cast"+10','Magic dmg. taken -4',}},
+		hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}},
+		legs={ name="Herculean Trousers", augments={'Mag. Acc.+14 "Mag.Atk.Bns."+14','"Fast Cast"+6',}},
+    	feet="Hattori Kyahan +1",
+		neck="Orunmila's Torque",
+		waist="Oneiros Belt",
+		left_ear="Loquac. Earring",
+		right_ear="Enchntr. Earring +1",
+		left_ring="Rahab Ring",
+		right_ring="Kishar Ring",
+		back={ name="Andartia's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10',}},
+	}
+	
+-- This is where we will define our midcast sets.  These are sets of gear that get equiped BEFORE the spell or ability lands.
 	sets.midcast = {}
 	sets.midcast.enmity = {
 		ammo="Date Shuriken",
-		head="Genmei Kabuto",
+		head="Nyame Helm",
 		body={ name="Emet Harness +1", augments={'Path: A',}},
 		hands="Kurys Gloves",
 		legs={ name="Zoar Subligar +1", augments={'Path: A',}},
@@ -80,15 +110,15 @@ function get_sets()
 	sets.midcast.elenin = {
 		ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
 		head={ name="Mochi. Hatsuburi +3", augments={'Enhances "Yonin" and "Innin" effect',}},
-		body="Nyame Mail",
-		hands="Nyame Gauntlets",
-		legs="Nyame Flanchard",
+		body="Gyve Doublet",
+		hands={ name="Herculean Gloves", augments={'"Resist Silence"+8','"Mag.Atk.Bns."+27','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
+		legs="Gyve Trousers",
 		feet={ name="Mochi. Kyahan +3", augments={'Enh. Ninj. Mag. Acc/Cast Time Red.',}},
-		neck="Sanctity Necklace",
+		neck="Satlada Necklace",
 		waist="Orpheus's Sash",
 		left_ear="Crematio Earring",
 		right_ear="Friomisi Earring",
-		left_ring="Stikini Ring +1",
+		left_ring="Shiva Ring +1",
 		right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
 		back={ name="Andartia's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}},
 	}
@@ -104,8 +134,8 @@ function get_sets()
 		waist="Orpheus's Sash",
 		left_ear="Static Earring",
 		right_ear="Friomisi Earring",
-		left_ring="Locus Ring",
-		right_ring="Mujin Band",
+		left_ring="Mujin Band",
+		right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
 		back={ name="Andartia's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}},
 	}
 	
@@ -120,7 +150,7 @@ function get_sets()
 		waist="Orpheus's Sash",
 		left_ear="Crematio Earring",
 		right_ear="Friomisi Earring",
-		left_ring="Shiva Ring +1",
+		left_ring="Stikini Ring +1",
 		right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
 		back={ name="Andartia's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}},
 	}
@@ -253,7 +283,7 @@ function get_sets()
 		hands="Nyame Gauntlets",
 		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
-		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
+		neck="Fotia Gorget",
 		waist="Orpheus's Sash",
 		left_ear={ name="Lugra Earring +1", augments={'Path: A',}},
 		right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
@@ -265,7 +295,7 @@ function get_sets()
 	sets.midcast.savageblade = {
 		ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
 		head="Hachiya Hatsu. +3",
-		body={ name="Herculean Vest", augments={'Weapon skill damage +5%','STR+9','Attack+13',}},
+		body={ name="Herculean Vest", augments={'Pet: Attack+9 Pet: Rng.Atk.+9','STR+6','Weapon skill damage +5%','Accuracy+15 Attack+15','Mag. Acc.+14 "Mag.Atk.Bns."+14',}},
 		hands={ name="Herculean Gloves", augments={'Accuracy+10','Weapon skill damage +5%','Attack+10',}},
 		legs={ name="Mochi. Hakama +3", augments={'Enhances "Mijin Gakure" effect',}},
 		feet={ name="Herculean Boots", augments={'Attack+9','Weapon skill damage +5%','AGI+8','Accuracy+13',}},
@@ -299,15 +329,15 @@ function get_sets()
 		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
 		body="Ken. Samue +1",
 		hands={ name="Ryuo Tekko +1", augments={'DEX+12','Accuracy+25','"Dbl.Atk."+4',}},
-		legs="Ken. Hakama +1",
+		legs={ name="Mochi. Hakama +3", augments={'Enhances "Mijin Gakure" effect',}},
 		feet={ name="Adhe. Gamashes +1", augments={'STR+12','DEX+12','Attack+20',}},
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
-		waist="Gerdr Belt +1",
+		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear="Odr Earring",
 		right_ear={ name="Lugra Earring +1", augments={'Path: A',}},
-		left_ring="Begrudging Ring",
+		left_ring="Gere Ring",
 		right_ring="Regal Ring",
-		back={ name="Andartia's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','AGI+10','Crit.hit rate+10',}},
+		back={ name="Andartia's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','AGI+10','Weapon skill damage +10%',}},
 	}
 
 	sets.midcast.truestrike = {
@@ -326,68 +356,84 @@ function get_sets()
 		back={ name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
 	}
 
-	-- This is where we will define our aftercast sets.  These are sets of gear that get equiped AFTER the spell or ability is used.  Normally this is used to put you back into your current TP set.
+	sets.midcast.asuran = {
+		ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
+		head="Hachiya Hatsu. +3",
+		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
+		hands={ name="Mochizuki Tekko +3", augments={'Enh. "Ninja Tool Expertise" effect',}},
+		legs={ name="Rao Haidate +1", augments={'STR+12','DEX+12','Attack+20',}},
+		feet={ name="Ryuo Sune-Ate +1", augments={'STR+12','DEX+12','Accuracy+20',}},
+		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
+		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+		left_ear={ name="Lugra Earring +1", augments={'Path: A',}},
+		right_ear="Odnowa Earring +1",
+		left_ring="Gere Ring",
+		right_ring="Regal Ring",
+		back={ name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
+	}
+
+-- This is where we will define our aftercast sets.  These are sets of gear that get equiped AFTER the spell or ability is used.  Normally this is used to put you back into your current TP set.
 	sets.aftercast = {}
 	sets.aftercast.dw40 = {
 		ammo="Date Shuriken",
 		head={ name="Ryuo Somen +1", augments={'HP+65','"Store TP"+5','"Subtle Blow"+8',}},
-		body="Ken. Samue +1",
-		hands="Ken. Tekko +1",
-		legs="Ken. Hakama +1",
-		feet="Ken. Sune-Ate +1",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
-		waist="Shetal Stone",
+		waist="Reiki Yotai",
 		left_ear="Eabani Earring",
 		right_ear="Suppanomimi",
 		left_ring="Gere Ring",
-		right_ring="Haverton Ring",
+		right_ring="Haverton Ring +1",
 		back={ name="Andartia's Mantle", augments={'AGI+20','Eva.+20 /Mag. Eva.+20','Evasion+10','"Dual Wield"+10','Evasion+15',}},
 	}
 	
 	sets.aftercast.dw20 = {
 		ammo="Date Shuriken",
-		head="Ken. Jinpachi +1",
-		body="Ken. Samue +1",
-		hands="Ken. Tekko +1",
-		legs="Ken. Hakama +1",
-		feet="Ken. Sune-Ate +1",
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
-		waist="Shetal Stone",
+		waist="Reiki Yotai",
 		left_ear="Eabani Earring",
 		right_ear="Suppanomimi",
 		left_ring="Gere Ring",
-		right_ring="Haverton Ring",
+		right_ring="Haverton Ring +1",
 		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Damage taken-5%',}},
 	}
 
 	sets.aftercast.dw0 = {
 		ammo="Date Shuriken",
-		head="Ken. Jinpachi +1",
-		body="Ken. Samue +1",
-		hands="Ken. Tekko +1",
-		legs="Ken. Hakama +1",
-		feet="Ken. Sune-Ate +1",
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
-		left_ear="Cessance Earring",
-		right_ear="Brutal Earring",
+		left_ear="Telos Earring",
+		right_ear="Crep. Earring",
 		left_ring="Gere Ring",
 		right_ring="Epona's Ring",
-		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Damage taken-5%',}},
+		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Damage taken-5%',}},
 	}
 
 	sets.aftercast.accuracy = {
 		ammo="Date Shuriken",
-		head="Ken. Jinpachi +1",
-		body="Ken. Samue +1",
-		hands="Ken. Tekko +1",
-		legs="Ken. Hakama +1",
-		feet="Ken. Sune-Ate +1",
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist={ name="Kentarch Belt +1", augments={'Path: A',}},
 		left_ear={ name="Domin. Earring +1", augments={'Path: A',}},
 		right_ear="Mache Earring +1",
-		left_ring={ name="Cacoethic Ring +1", augments={'Path: A',}},
+		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
 		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Damage taken-5%',}},
 	}
@@ -443,10 +489,23 @@ function get_sets()
 end
 
 -----------------------------------------------------------------------------------
-  -- This is the precast section.  It is used for things you want to happen before you start to start to use the ability or spell.
-  function precast(spell, act)
+-- This is the precast section.  It is used for things you want to happen before you start to start to use the ability or spell.
+ function precast(spell)
 
-	if spell.english:startswith('Utsusemi') then
+-- The below command is used to cancel old shadows if they can not be overwritten by the newly cased Utsusemi.
+	if spell.english == "Utsusemi: Ichi" then
+		if buffactive['Copy Image'] then
+			send_command('cancel 66')
+		elseif buffactive['Copy Image (2)'] then 
+			send_command('cancel 444')
+		elseif buffactive['Copy Image (3)'] then
+			send_command('cancel 445')
+		elseif buffactive['Copy Image (4+)'] then
+			send_command('cancel 446')
+		end
+	end
+
+	if spell.english == "Utsusemi: Ni" then
 		if buffactive['Copy Image'] then
 			send_command('cancel 66')
 		elseif buffactive['Copy Image (2)'] then 
@@ -463,55 +522,55 @@ end
 	end
 
 	if spell.english:startswith('Monomi') then
-		equip (sets.precast.fc)
+		equip(sets.precast.fc)
 	end
 
 	if spell.english:startswith('Tonko') then
-		equip (sets.precast.fc)
+		equip(sets.precast.fc)
 	end
 	
 	if spell.english:startswith('Gekka') then
-		equip (sets.precast.fc)
+		equip(sets.precast.fc)
 	end
 
 	if spell.english:startswith('Yain') then
-		equip (sets.precast.fc)
+		equip(sets.precast.fc)
 	end
 	
 	if spell.english:startswith('Kakka') then
-		equip (sets.precast.fc)
+		equip(sets.precast.fc)
 	end
 
 	if spell.english:startswith('Myoshu') then
-		equip (sets.precast.fc)
+		equip(sets.precast.fc)
 	end
 
 	if spell.english:startswith('Migawari') then
-		equip (sets.precast.fc)
+		equip(sets.precast.fc)
 	end
 	
 	if spell.english:startswith('Yurin') then
-		equip (sets.precast.fc)
+		equip(sets.precast.fc)
 	end
 	
 	if spell.english:startswith('Dokumori') then
-		equip (sets.precast.fc)
+		equip(sets.precast.fc)
 	end
 
 	if spell.english:startswith('Aisha') then
-		equip (sets.precast.fc)
+		equip(sets.precast.fc)
 	end
 
 	if spell.english:startswith('Kurayami') then
-		equip (sets.precast.fc)
+		equip(sets.precast.fc)
 	end
 	
 	if spell.english:startswith('Hojo') then
-		equip (sets.precast.fc)
+		equip(sets.precast.fc)
 	end
 
 	if spell.english:startswith('Jubaku') then
-		equip (sets.precast.fc)
+		equip(sets.precast.fc)
 	end
 
 	if spell.english:startswith('Katon') then
@@ -539,82 +598,84 @@ end
 	end
 	
 	if spell.type == "WhiteMagic" then
-		equip (sets.precast.fc)
+		equip(sets.precast.fc)
 	end
 
 	if spell.type == "BlackMagic" then
-		equip (sets.precast.fc)
+		equip(sets.precast.fc)
 	end
 
 	if spell.type == "Trust" then
 		equip(sets.precast.fc)
 	end
-	
 end
 
 -----------------------------------------------------------------------------------
   -- This is the midcast section.  It is used to designate gear that you want on as the ability or spell is used.
 function midcast(spell, act)
 
-	-- The below command is used to cancel old shadows if they can not be overwritten by the newly cased Utsusemi.
 	if spell.english:startswith('Utsusemi') then
 		equip(sets.precast.utsusemi)
 	end
 
 	if spell.english == "Provoke" then
-		equip (sets.midcast.enmity)
+		equip(sets.midcast.enmity)
 	end
 
 	if spell.english == "Warcry" then
-		equip (sets.midcast.enmity)
+		equip(sets.midcast.enmity)
 	end
 
 	if spell.english == "Animated Flourish" then
-		equip (sets.midcast.enmity)
+		equip(sets.midcast.enmity)
 	end
 
 	if spell.english == "Violent Flourish" then
-		equip (sets.midcast.enfnin)
+		equip(sets.midcast.enfnin)
 	end
 
 	if spell.english:startswith('Curing') then
-		equip (sets.midcast.waltz)
+		equip(sets.midcast.waltz)
 	end
 
 	if spell.english == "Divine Waltz" then
-		equip (sets.midcast.waltz)
+		equip(sets.midcast.waltz)
 	end
 	
 	if spell.english:startswith('Migawari') then
-		equip (sets.midcast.migawari)
+		equip(sets.midcast.migawari)
 	end
 	
 	if spell.english:startswith('Kurayami') then
-		equip (sets.midcast.enfnin)
+		equip(sets.midcast.enfnin)
 	end
 
 	if spell.english:startswith('Hojo') then
-		equip (sets.midcast.enfnin)
+		equip(sets.midcast.enfnin)
 	end
 
 	if spell.english:startswith('Jubaku') then
-		equip (sets.midcast.enfnin)
+		equip(sets.midcast.enfnin)
 	end
 
 	if spell.english:startswith('Aisha') then
-		equip (sets.midcast.enfnin)
+		equip(sets.midcast.enfnin)
 	end
 
 	if spell.english:startswith('Yurin') then
-		equip (sets.midcast.enfnin)
+		equip(sets.midcast.enfnin)
+	end
+
+	if spell.english:startswith('Hyoton') then
+		equip(sets.midcast.mbnin)
 	end
 
 	if spell.type == "WhiteMagic" then
-		equip (sets.midcast.enfnin)
+		equip(sets.midcast.enfnin)
 	end
 
 	if spell.type == "BlackMagic" then
-		equip (sets.midcast.enfnin)
+		equip(sets.midcast.enfnin)
 	end
 
 	if spell.english:startswith('Katon') then
@@ -666,7 +727,7 @@ function midcast(spell, act)
 	end
 	
 	if spell.english == "Blade: Hi" then
-		equip (sets.midcast.bladehi)
+		equip(sets.midcast.bladehi)
 	end
 
 	if spell.english == "Blade: Metsu" then
@@ -729,6 +790,10 @@ function midcast(spell, act)
 		equip (sets.midcast.truestrike)
 	end
 
+	if spell.english == "Asuran Fists" then
+		equip (sets.midcast.asuran)
+	end
+
 	if spell.english == "Judgment" then
 		equip (sets.midcast.truestrike)
 	end
@@ -764,14 +829,86 @@ end
 
 -----------------------------------------------------------------------------------
 
-	-- This section is the aftercast section that makes it so that after any of the above abilities you get put back into the correct gearset.
-	-- You can create tp_mode gearsets for ANY purpose.  Just make sure you label them correctly.  All must be in the sets.aftercast section.  For instance sets.aftercast.dw40.
-	-- Don't forget to create a new gearset section defining the gear you want in it if you don't want to use my predefined sets.  Ie create a gearset for sets.aftercast.storetp.
+-- This section is the aftercast section that makes it so that after any of the above abilities you get put back into the correct gearset.
+-- You can create tp_mode gearsets for ANY purpose.  Just make sure you label them correctly.  All must be in the sets.aftercast section.  For instance sets.aftercast.dw40.
+-- Don't forget to create a new gearset section defining the gear you want in it if you don't want to use my predefined sets.  Ie create a gearset for sets.aftercast.storetp.
 function aftercast(spell, act, spellMap, eventArgs)
     set = sets.aftercast
 	if set[tp_mode] then
 		set = set[tp_mode]
 	end
 	equip(set)
+	check_tool_count()
+  --buff_change()
+	gearswap_jobbox:text(gearswap_box())
+	gearswap_jobbox:show()
 end
 
+-- The below commands are for controlling the Ninja Information Section.
+
+function buff_change(buff, gain)
+	if buffactive['Copy Image'] then
+		utsubuff = "\\cs(255,127,0)1"	
+	elseif buffactive['Copy Image (2)'] then 
+		utsubuff = "\\cs(255,255,0)2"
+	elseif buffactive['Copy Image (3)'] then
+		utsubuff = "\\cs(127,255,0)3"
+	elseif buffactive['Copy Image (4+)'] then
+		utsubuff = "\\cs(0,255,0)4+"
+	else 
+		utsubuff = "\\cs(255,0,0)0" 
+	end
+	gearswap_jobbox:text(gearswap_box())
+	gearswap_jobbox:show()
+end	
+
+function check_tool_count()
+	ctool = {'Shikanofuda',
+		'Shihei',
+		'Chonofuda',
+		'Inoshishinofuda'}
+
+	for t =1,4  do
+
+		if not player.inventory[ctool[t]] then
+			curCount = 0
+		elseif player.inventory[ctool[t]].count then
+			curCount = player.inventory[ctool[t]].count
+		end
+		a = ''
+
+		--defined green = 99
+		cMax = 50
+		cColorR = 0
+		if curCount > cMax then
+			cColorR = 0
+			cColorG = 255
+		else
+			percent = (curCount/cMax * 100)
+			if percent >=50 then
+				cColorG = 255
+				cColorR =math.floor(5 * (100-percent))
+			else 
+				cColorR = 255
+				cColorG = 255-math.floor(5 * (50-percent))
+			end
+		end
+		if curCount == 0 then
+			a = "\\cs(255,0,0)" .. '0'
+		else 
+			a = "\\cs("..cColorR..","..cColorG..",0)" .. (curCount) 
+		end
+
+		if t == 1 then
+			shika = a
+		elseif t == 2 then
+			shihei = a
+		elseif t == 3 then
+			chono = a 
+		elseif t == 4 then
+			inofu = a 
+		end
+	end
+end
+
+user_setup()
