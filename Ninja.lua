@@ -878,7 +878,7 @@ function check_tool_count()
 		a = ''
 
 		--defined green = 99
-		cMax = 50
+		cMax = 99
 		cColorR = 0
 		if curCount > cMax then
 			cColorR = 0
