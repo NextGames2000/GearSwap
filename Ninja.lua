@@ -215,7 +215,7 @@ function get_sets()
 	sets.midcast.bladeshun = {
 		ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
 		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
-		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
+		body="Agony Jerkin +1",
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
 		legs={ name="Rao Haidate +1", augments={'STR+12','DEX+12','Attack+20',}},
 		feet={ name="Mochi. Kyahan +3", augments={'Enh. Ninj. Mag. Acc/Cast Time Red.',}},
@@ -756,6 +756,10 @@ function midcast(spell, act)
 
 	if spell.english == "Blade: Kamu" then
 		equip (sets.midcast.bladechi)
+	end
+
+	if spell.english == "Blade: Ku" then
+		equip (sets.midcast.bladeku)
 	end
 
 	if spell.english == "Blade: Teki" then
