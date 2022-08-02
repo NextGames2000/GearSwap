@@ -666,10 +666,6 @@ function midcast(spell, act)
 		equip(sets.midcast.enfnin)
 	end
 
-	if spell.english:startswith('Hyoton') then
-		equip(sets.midcast.mbnin)
-	end
-
 	if spell.type == "WhiteMagic" then
 		equip(sets.midcast.enfnin)
 	end
