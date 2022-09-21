@@ -29,6 +29,15 @@ end
 gearswap_box_config = {pos={x=20,y=240},padding=8,text={font='sans-serif',size=10,stroke={width=2,alpha=255},Fonts={'sans-serif'},},bg={alpha=0},flags={}}
 gearswap_jobbox = texts.new(gearswap_box_config)
 
+
+function equip_selected_set()
+	set = sets.aftercast
+	if set[tp_mode] then
+		set = set[tp_mode]
+	end
+	equip(set)
+end
+
 function user_setup()
 	check_tool_count()
 	gearswap_jobbox:text(gearswap_box())		
@@ -37,12 +46,13 @@ end
 
 
 function self_command(command)
-	 local args = split_args(command)
-		if args[1] == 'tp' then
+	local args = split_args(command)
+	if args[1] == 'tp' then
 		tp_mode = args[2]
-	 elseif args[1] == 'mb' then
-		mb_mode = args[2]
-	 end
+		equip_selected_set()
+		gearswap_jobbox:text(gearswap_box())
+		gearswap_jobbox:show()
+	end
 end
  
 function split_args(args)
