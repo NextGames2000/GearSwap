@@ -29,20 +29,37 @@ end
 gearswap_box_config = {pos={x=20,y=240},padding=8,text={font='sans-serif',size=10,stroke={width=2,alpha=255},Fonts={'sans-serif'},},bg={alpha=0},flags={}}
 gearswap_jobbox = texts.new(gearswap_box_config)
 
-function user_setup()
-	check_tool_count()
+
+function equip_selected_set()
+	set = sets.aftercast
+	if set[tp_mode] then
+		set = set[tp_mode]
+	end
+	equip(set)
+end
+
+function updateUI()
 	gearswap_jobbox:text(gearswap_box())		
 	gearswap_jobbox:show()
 end
 
+function user_setup()
+	check_tool_count()
+	updateUI()
+end
+
 
 function self_command(command)
-	 local args = split_args(command)
-		if args[1] == 'tp' then
+	local args = split_args(command)
+	if args[1] == 'tp' then
 		tp_mode = args[2]
-	 elseif args[1] == 'mb' then
+		equip_selected_set()
+		updateUI()
+	elseif args[1] == 'mb' then
 		mb_mode = args[2]
-	 end
+		equip_selected_set()
+		updateUI()
+	end
 end
  
 function split_args(args)
@@ -488,6 +505,13 @@ function get_sets()
 	
 end
 
+
+function equipSetConditionally(proposedSet)
+	if tp_mode ~= 'hp' then
+		equip(proposedSet)
+	end
+end
+
 -----------------------------------------------------------------------------------
 -- This is the precast section.  It is used for things you want to happen before you start to start to use the ability or spell.
  function precast(spell)
@@ -518,95 +542,95 @@ end
 	end
 
 	if spell.english:startswith('Utsusemi') then
-		equip(sets.precast.utsusemi)
+		equipSetConditionally(sets.precast.utsusemi)
 	end
 
 	if spell.english:startswith('Monomi') then
-		equip(sets.precast.fc)
+		equipSetConditionally(sets.precast.fc)
 	end
 
 	if spell.english:startswith('Tonko') then
-		equip(sets.precast.fc)
+		equipSetConditionally(sets.precast.fc)
 	end
 	
 	if spell.english:startswith('Gekka') then
-		equip(sets.precast.fc)
+		equipSetConditionally(sets.precast.fc)
 	end
 
 	if spell.english:startswith('Yain') then
-		equip(sets.precast.fc)
+		equipSetConditionally(sets.precast.fc)
 	end
 	
 	if spell.english:startswith('Kakka') then
-		equip(sets.precast.fc)
+		equipSetConditionally(sets.precast.fc)
 	end
 
 	if spell.english:startswith('Myoshu') then
-		equip(sets.precast.fc)
+		equipSetConditionally(sets.precast.fc)
 	end
 
 	if spell.english:startswith('Migawari') then
-		equip(sets.precast.fc)
+		equipSetConditionally(sets.precast.fc)
 	end
 	
 	if spell.english:startswith('Yurin') then
-		equip(sets.precast.fc)
+		equipSetConditionally(sets.precast.fc)
 	end
 	
 	if spell.english:startswith('Dokumori') then
-		equip(sets.precast.fc)
+		equipSetConditionally(sets.precast.fc)
 	end
 
 	if spell.english:startswith('Aisha') then
-		equip(sets.precast.fc)
+		equipSetConditionally(sets.precast.fc)
 	end
 
 	if spell.english:startswith('Kurayami') then
-		equip(sets.precast.fc)
+		equipSetConditionally(sets.precast.fc)
 	end
 	
 	if spell.english:startswith('Hojo') then
-		equip(sets.precast.fc)
+		equipSetConditionally(sets.precast.fc)
 	end
 
 	if spell.english:startswith('Jubaku') then
-		equip(sets.precast.fc)
+		equipSetConditionally(sets.precast.fc)
 	end
 
 	if spell.english:startswith('Katon') then
-		equip(sets.precast.fc)
+		equipSetConditionally(sets.precast.fc)
 	end
 
 	if spell.english:startswith('Hyoton') then
-		equip(sets.precast.fc)
+		equipSetConditionally(sets.precast.fc)
 	end
 	
 	if spell.english:startswith('Huton') then
-		equip(sets.precast.fc)
+		equipSetConditionally(sets.precast.fc)
 	end
 
 	if spell.english:startswith('Doton') then
-		equip(sets.precast.fc)
+		equipSetConditionally(sets.precast.fc)
 	end
 
 	if spell.english:startswith('Raiton') then
-		equip(sets.precast.fc)
+		equipSetConditionally(sets.precast.fc)
 	end
 	
 	if spell.english:startswith('Suiton') then
-		equip(sets.precast.fc)
+		equipSetConditionally(sets.precast.fc)
 	end
 	
 	if spell.type == "WhiteMagic" then
-		equip(sets.precast.fc)
+		equipSetConditionally(sets.precast.fc)
 	end
 
 	if spell.type == "BlackMagic" then
-		equip(sets.precast.fc)
+		equipSetConditionally(sets.precast.fc)
 	end
 
 	if spell.type == "Trust" then
-		equip(sets.precast.fc)
+		equipSetConditionally(sets.precast.fc)
 	end
 end
 
@@ -615,63 +639,63 @@ end
 function midcast(spell, act)
 
 	if spell.english:startswith('Utsusemi') then
-		equip(sets.precast.utsusemi)
+		equipSetConditionally(sets.precast.utsusemi)
 	end
 
 	if spell.english == "Provoke" then
-		equip(sets.midcast.enmity)
+		equipSetConditionally(sets.midcast.enmity)
 	end
 
 	if spell.english == "Warcry" then
-		equip(sets.midcast.enmity)
+		equipSetConditionally(sets.midcast.enmity)
 	end
 
 	if spell.english == "Animated Flourish" then
-		equip(sets.midcast.enmity)
+		equipSetConditionally(sets.midcast.enmity)
 	end
 
 	if spell.english == "Violent Flourish" then
-		equip(sets.midcast.enfnin)
+		equipSetConditionally(sets.midcast.enfnin)
 	end
 
 	if spell.english:startswith('Curing') then
-		equip(sets.midcast.waltz)
+		equipSetConditionally(sets.midcast.waltz)
 	end
 
 	if spell.english == "Divine Waltz" then
-		equip(sets.midcast.waltz)
+		equipSetConditionally(sets.midcast.waltz)
 	end
 	
 	if spell.english:startswith('Migawari') then
-		equip(sets.midcast.migawari)
+		equipSetConditionally(sets.midcast.migawari)
 	end
 	
 	if spell.english:startswith('Kurayami') then
-		equip(sets.midcast.enfnin)
+		equipSetConditionally(sets.midcast.enfnin)
 	end
 
 	if spell.english:startswith('Hojo') then
-		equip(sets.midcast.enfnin)
+		equipSetConditionally(sets.midcast.enfnin)
 	end
 
 	if spell.english:startswith('Jubaku') then
-		equip(sets.midcast.enfnin)
+		equipSetConditionally(sets.midcast.enfnin)
 	end
 
 	if spell.english:startswith('Aisha') then
-		equip(sets.midcast.enfnin)
+		equipSetConditionally(sets.midcast.enfnin)
 	end
 
 	if spell.english:startswith('Yurin') then
-		equip(sets.midcast.enfnin)
+		equipSetConditionally(sets.midcast.enfnin)
 	end
 
 	if spell.type == "WhiteMagic" then
-		equip(sets.midcast.enfnin)
+		equipSetConditionally(sets.midcast.enfnin)
 	end
 
 	if spell.type == "BlackMagic" then
-		equip(sets.midcast.enfnin)
+		equipSetConditionally(sets.midcast.enfnin)
 	end
 
 	if spell.english:startswith('Katon') then
@@ -679,7 +703,7 @@ function midcast(spell, act)
 		if set[mb_mode] then
 			set = set[mb_mode]
 		end
-		equip(set)
+		equipSetConditionally(set)
 	end
 
 	if spell.english:startswith('Hyoton') then
@@ -687,7 +711,7 @@ function midcast(spell, act)
 		if set[mb_mode] then
 			set = set[mb_mode]
 		end
-		equip(set)
+		equipSetConditionally(set)
 	end
 
 	if spell.english:startswith('Huton') then
@@ -695,7 +719,7 @@ function midcast(spell, act)
 		if set[mb_mode] then
 			set = set[mb_mode]
 		end
-		equip(set)
+		equipSetConditionally(set)
 	end
 
 	if spell.english:startswith('Doton') then
@@ -703,7 +727,7 @@ function midcast(spell, act)
 		if set[mb_mode] then
 			set = set[mb_mode]
 		end
-		equip(set)
+		equipSetConditionally(set)
 	end
 
 	if spell.english:startswith('Raiton') then
@@ -711,7 +735,7 @@ function midcast(spell, act)
 		if set[mb_mode] then
 			set = set[mb_mode]
 		end
-		equip(set)
+		equipSetConditionally(set)
 	end
 
 	if spell.english:startswith('Suiton')then
@@ -719,111 +743,111 @@ function midcast(spell, act)
 		if set[mb_mode] then
 			set = set[mb_mode]
 		end
-		equip(set)
+		equipSetConditionally(set)
 	end
 	
 	if spell.english == "Blade: Hi" then
-		equip(sets.midcast.bladehi)
+		equipSetConditionally(sets.midcast.bladehi)
 	end
 
 	if spell.english == "Blade: Metsu" then
-		equip (sets.midcast.blademetsu)
+		equipSetConditionally (sets.midcast.blademetsu)
 	end
 
 	if spell.english == "Blade: Shun" then
-		equip (sets.midcast.bladeshun)
+		equipSetConditionally (sets.midcast.bladeshun)
 	end
 
 	if spell.english == "Blade: Ten" then
-		equip (sets.midcast.bladeten)
+		equipSetConditionally (sets.midcast.bladeten)
 	end
 	
 	if spell.english == "Blade: Chi" then
-		equip (sets.midcast.bladechi)
+		equipSetConditionally (sets.midcast.bladechi)
 	end
 	
 	if spell.english == "Blade: To" then
-		equip (sets.midcast.bladechi)
+		equipSetConditionally (sets.midcast.bladechi)
 	end
 	
 	if spell.english == "Blade: Yu" then
-		equip (sets.midcast.bladechi)
+		equipSetConditionally (sets.midcast.bladechi)
 	end
 
 	if spell.english == "Blade: Kamu" then
-		equip (sets.midcast.bladechi)
+		equipSetConditionally (sets.midcast.bladechi)
 	end
 
 	if spell.english == "Blade: Ku" then
-		equip (sets.midcast.bladeku)
+		equipSetConditionally (sets.midcast.bladeku)
 	end
 
 	if spell.english == "Blade: Teki" then
-		equip (sets.midcast.bladechi)
+		equipSetConditionally (sets.midcast.bladechi)
 	end
 
 	if spell.english == "Blade: Retsu" then
-		equip (sets.midcast.bladeten)
+		equipSetConditionally (sets.midcast.bladeten)
 	end
 
 	if spell.english == "Blade: Rin" then
-		equip (sets.midcast.bladeten)
+		equipSetConditionally (sets.midcast.bladeten)
 	end
 
 	if spell.english == "Blade: Jin" then
-		equip (sets.midcast.bladeten)
+		equipSetConditionally (sets.midcast.bladeten)
 	end
 
 	if spell.english == "Savage Blade" then
-		equip (sets.midcast.savageblade)
+		equipSetConditionally (sets.midcast.savageblade)
 	end
 
 	if spell.english == "Aeolian Edge" then
-		equip (sets.midcast.savageblade)
+		equipSetConditionally (sets.midcast.savageblade)
 	end
 
 	if spell.english == "Evisceration" then
-		equip (sets.midcast.evis)
+		equipSetConditionally (sets.midcast.evis)
 	end
 
 	if spell.english == "True Strike" then
-		equip (sets.midcast.truestrike)
+		equipSetConditionally (sets.midcast.truestrike)
 	end
 
 	if spell.english == "Asuran Fists" then
-		equip (sets.midcast.asuran)
+		equipSetConditionally (sets.midcast.asuran)
 	end
 
 	if spell.english == "Judgment" then
-		equip (sets.midcast.truestrike)
+		equipSetConditionally (sets.midcast.truestrike)
 	end
 
 	if spell.english == "Tachi: Ageha" then
-		equip (sets.midcast.enfnin)
+		equipSetConditionally (sets.midcast.enfnin)
 	end
 
 	if spell.english == "Tachi: Kasha" then
-		equip (sets.midcast.savageblade)
+		equipSetConditionally (sets.midcast.savageblade)
 	end
 
 	if spell.english == "Tachi: Koki" then
-		equip (sets.midcast.bladechi)
+		equipSetConditionally (sets.midcast.bladechi)
 	end
 
 	if spell.english == "Tachi: Jinpu" then
-		equip (sets.midcast.bladeten)
+		equipSetConditionally (sets.midcast.bladeten)
 	end
 
 	if spell.english == "Tachi: Kagero" then
-		equip (sets.midcast.bladechi)
+		equipSetConditionally (sets.midcast.bladechi)
 	end
 
 	if spell.english == "Tachi:Goten" then
-		equip (sets.midcast.bladeten)
+		equipSetConditionally (sets.midcast.bladeten)
 	end
 
 	if spell.type == "Trust" then
-		equip(sets.precast.fc)
+		equipSetConditionally(sets.precast.fc)
 	end
 end
 
@@ -833,11 +857,7 @@ end
 -- You can create tp_mode gearsets for ANY purpose.  Just make sure you label them correctly.  All must be in the sets.aftercast section.  For instance sets.aftercast.dw40.
 -- Don't forget to create a new gearset section defining the gear you want in it if you don't want to use my predefined sets.  Ie create a gearset for sets.aftercast.storetp.
 function aftercast(spell, act, spellMap, eventArgs)
-    set = sets.aftercast
-	if set[tp_mode] then
-		set = set[tp_mode]
-	end
-	equip(set)
+	equip_selected_set()
 	check_tool_count()
   --buff_change()
 	gearswap_jobbox:text(gearswap_box())
