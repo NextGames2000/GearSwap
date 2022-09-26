@@ -38,10 +38,14 @@ function equip_selected_set()
 	equip(set)
 end
 
-function user_setup()
-	check_tool_count()
+function updateUI()
 	gearswap_jobbox:text(gearswap_box())		
 	gearswap_jobbox:show()
+end
+
+function user_setup()
+	check_tool_count()
+	updateUI()
 end
 
 
@@ -50,8 +54,11 @@ function self_command(command)
 	if args[1] == 'tp' then
 		tp_mode = args[2]
 		equip_selected_set()
-		gearswap_jobbox:text(gearswap_box())
-		gearswap_jobbox:show()
+		updateUI()
+	elseif args[1] == 'mb' then
+		mb_mode = args[2]
+		equip_selected_set()
+		updateUI()
 	end
 end
  
