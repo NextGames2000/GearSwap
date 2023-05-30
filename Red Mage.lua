@@ -1,4 +1,4 @@
-	--  Welcome to Logical's Ninja Lua.  This Lua is used for changing gear during precast and midcast and then swapping to the appropriate set for aftercast.
+	--  Welcome to Logical's Red Mage Lua.  This Lua is used for changing gear during precast and midcast and then swapping to the appropriate set for aftercast.
 	--  It will also cancel shadows for you when necessary to recast new shadows.
 	--  Please refer to my video on my NextGames YouTube channel for how to properly utilize this LUA.  
 
@@ -31,7 +31,7 @@ function get_sets()
 		ammo="Sapience Orb",
 		neck="Orunmila's Torque",
 		waist="Emblas Sash",
-		left_ear="Loquac. Earring",
+		left_ear={ name="Lethargy Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+8','Mag. Acc.+8',}},
 		right_ear="Malignance Earring",
 		left_ring="Rahab Ring",
 		right_ring="Kishar Ring",
@@ -40,194 +40,129 @@ function get_sets()
 	
 	-- This is where we will define our midcast sets.  These are sets of gear that get equiped BEFORE the spell or ability lands.
 	sets.midcast = {}
-	sets.midcast.magicacc = {
-		ammo="Regal Gem",
-		head="Malignance Chapeau",
+	sets.midcast.enhancing = {
+		ammo="Homiliary",
+		head={ name="Amalric Coif", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
 		body="Atrophy Tabard +3",
-		hands="Malignance Gloves",
-		legs="Malignance Tights",
-		feet="Malignance Boots",
-		neck={ name="Dls. Torque +2", augments={'Path: A',}},
-		waist="Sacro Cord",
-		left_ear="Regal Earring",
-		right_ear="Malignance Earring",
-		left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
-		right_ring="Stikini Ring +1",
-		back={ name="Aurist's Cape +1", augments={'Path: A',}},
-	}
-	
-	sets.midcast.haste = {
-		ammo="Sapience Orb",
-		head="Leth. Chappel +1",
-		body={ name="Viti. Tabard +3", augments={'Enhances "Chainspell" effect',}},
-		hands={ name="Viti. Gloves +3", augments={'Enhancing Magic duration',}},
-		legs="Leth. Fuseau +1",
-		feet="Leth. Houseaux +1",
+		hands="Atrophy Gloves +3",
+		legs="Atrophy Tights +3",
+		feet="Leth. Houseaux +3",
 		neck={ name="Dls. Torque +2", augments={'Path: A',}},
 		waist="Embla Sash",
 		left_ear="Mimir Earring",
-		right_ear="Andoaa Earring",
-		left_ring="Stikini Ring",
-		right_ring="Stikini Ring +1",
-		back={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10',}},
-	}
-
-	sets.midcast.enhancing = {
-		ammo="Sapience Orb",
-		head="Leth. Chappel +1",
-		body={ name="Viti. Tabard +3", augments={'Enhances "Chainspell" effect',}},
-		hands={ name="Viti. Gloves +3", augments={'Enhancing Magic duration',}},
-		legs="Atrophy Tights +3",
-		feet="Leth. Houseaux +1",
-		neck={ name="Dls. Torque +2", augments={'Path: A',}},
-		waist="Embla sash",
-		left_ear="Mimir Earring",
-		right_ear="Andoaa Earring",
-		left_ring="Stikini Ring",
-		right_ring="Stikini Ring +1",
-		back={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10',}},
+		right_ear={ name="Lethargy Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+8','Mag. Acc.+8',}},
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring",
+		back={ name="Ghostfyre Cape", augments={'Enfb.mag. skill +10','Enha.mag. skill +10','Mag. Acc.+6',}},
 	}
 
 	sets.midcast.enfeebling = {
 		ammo="Regal Gem",
 		head={ name="Viti. Chapeau +3", augments={'Enfeebling Magic duration','Magic Accuracy',}},
 		body="Atrophy Tabard +3",
-		hands="Regal Cuffs",
-		legs="Malignance Tights",
+		hands="Leth. Ganth. +3",
+		legs="Leth. Fuseau +3",
 		feet={ name="Vitiation Boots +3", augments={'Immunobreak Chance',}},
 		neck={ name="Dls. Torque +2", augments={'Path: A',}},
 		waist="Sacro Cord",
 		left_ear="Regal Earring",
 		right_ear="Snotra Earring",
-		left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
-		right_ring="Stikini Ring +1",
-		back={ name="Aurist's Cape +1", augments={'Path: A',}},
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring",
+		back={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10',}},
 	}
 
 	sets.midcast.elemental = {
-		ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
-		head="Bunzi's Hat",
-		body="Bunzi's Robe",
-		hands="Bunzi's Gloves",
-		legs="Bunzi's Pants",
-		feet="Bunzi's Sabots",
+		ammo="Regal Gem",
+		head="Leth. Chappel +3",
+		body="Lethargy Sayon +3",
+		hands="Leth. Ganth. +3",
+		legs="Leth. Fuseau +3",
+	    feet="Jhakri Pigaches +2",
 		neck={ name="Warder's Charm +1", augments={'Path: A',}},
 		waist="Orpheus's Sash",
-		left_ear="Regal Earring",
+		left_ear="Static Earring",
 		right_ear="Malignance Earring",
-		left_ring="Freke Ring",
-		right_ring="Mujin Band",
+		left_ring="Mujin Band",
+		right_ring="Locus Ring",
 		back={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Magic Damage +10','"Mag.Atk.Bns."+10',}},
 	}
 
 	sets.midcast.refresh = {
-		ammo="Sapience Orb",
+		ammo="Homiliary",
 		head={ name="Amalric Coif", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
 		body="Atrophy Tabard +3",
-		hands={ name="Viti. Gloves +3", augments={'Enhancing Magic duration',}},
-		legs="Leth. Fuseau +1",
-		feet="Leth. Houseaux +1",
+		hands="Atrophy Gloves +3",
+		legs="Leth. Fuseau +3",
+		feet="Leth. Houseaux +3",
 		neck={ name="Dls. Torque +2", augments={'Path: A',}},
 		waist="Gishdubar Sash",
 		left_ear="Mimir Earring",
-		right_ear="Andoaa Earring",
-		left_ring="Stikini Ring",
-		right_ring="Stikini Ring +1",
+		right_ear={ name="Lethargy Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+8','Mag. Acc.+8',}},
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring",
 		back="Grapevine Cape",
 	}
 
 	sets.midcast.savage = {
-		ammo="Regal Gem",
-		head={ name="Viti. Chapeau +3", augments={'Enfeebling Magic duration','Magic Accuracy',}},
-		body={ name="Viti. Tabard +3", augments={'Enhances "Chainspell" effect',}},
-		hands="Atrophy Gloves +3",
-		legs="Jhakri Slops +2",
-		feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}},
-		neck={ name="Dls. Torque +2", augments={'Path: A',}},
+		ammo="Coiste Bodhar",
+		head={ name="Nyame Helm", augments={'Path: B',}},
+		body={ name="Nyame Mail", augments={'Path: B',}},
+		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+		legs={ name="Nyame Flanchard", augments={'Path: B',}},
+		feet="Leth. Houseaux +3",
+		neck="Rep. Plat. Medal",
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
-		right_ear="Regal Earring",
-		left_ring="Rufescent Ring",
-		right_ring="Shukuyu Ring",
-		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%',}},
-	}
-
-	sets.midcast.truestrike = {
-		ammo="Coiste Bodhar",
-		head={ name="Taeon Chapeau", augments={'Accuracy+19 Attack+19','"Triple Atk."+2','STR+7 DEX+7',}},
-		body="Ayanmo Corazza +2",
-		hands="Jhakri Cuffs +2",
-		legs={ name="Taeon Tights", augments={'Accuracy+20 Attack+20','"Triple Atk."+2','STR+7 DEX+7',}},
-		feet={ name="Taeon Boots", augments={'Accuracy+17 Attack+17','"Triple Atk."+2','STR+6 DEX+6',}},
-		neck="Fotia Gorget",
-		waist="Fotia Belt",
-		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
 		right_ear="Sherida Earring",
-		left_ring="Epaminondas's Ring",
-		right_ring="Hetairoi Ring",
-		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%',}},
+		left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+		right_ring="Epaminondas's Ring",
+		back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
 	}
 
 	sets.midcast.chant = {
 		ammo="Yetshila +1",
 		head={ name="Blistering Sallet +1", augments={'Path: A',}},
-		body="Ayanmo Corazza +2",
-		hands="Bunzi's Gloves",
+		body={ name="Taeon Tabard", augments={'Accuracy+20 Attack+20','Crit.hit rate+3','Crit. hit damage +3%',}},
+		hands={ name="Taeon Gloves", augments={'Accuracy+20 Attack+20','Crit.hit rate+3','Crit. hit damage +3%',}},
 		legs={ name="Zoar Subligar +1", augments={'Path: A',}},
 		feet="Thereoid Greaves",
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
-		left_ear="Mache Earring +1",
+		left_ear="Odr Earring",
 		right_ear="Sherida Earring",
 		left_ring="Ilabrat Ring",
 		right_ring="Begrudging Ring",
 		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}},
 	}
 
-	sets.midcast.req = {
-		ammo="Regal Gem",
-		head={ name="Viti. Chapeau +3", augments={'Enfeebling Magic duration','Magic Accuracy',}},
-		body="Jhakri Robe +2",
-		hands="Atrophy Gloves +3",
-		legs="Jhakri Slops +2",
-		feet="Jhakri Pigaches +2",
-		neck="Fotia Gorget",
-		waist="Fotia Belt",
-		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
-		right_ear="Sherida Earring",
-		left_ring="Rufescent Ring",
-		right_ring="Shukuyu Ring",
-		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%',}},
-	}
-
-	sets.midcast.sanguine = {
+	sets.midcast.seraph = {
 		ammo={ name="Coiste Bodhar", augments={'Path: A',}},
-		head="Bunzi's Hat",
-		body="Bunzi's Robe",
+		head={ name="Nyame Helm", augments={'Path: B',}},
+		body={ name="Nyame Mail", augments={'Path: B',}},
 		hands="Bunzi's Gloves",
-		legs="Bunzi's Pants",
-		feet="Bunzi's Sabots",
-		neck="Sanctity Necklace",
-		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+		legs="Leth. Fuseau +3",
+		feet="Leth. Houseaux +3",
+		neck={ name="Dls. Torque +2", augments={'Path: A',}},
+		waist="Orpheus's Sash",
 		left_ear="Malignance Earring",
 		right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
 		left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
-		right_ring="Epaminondas's Ring",
+		right_ring="Freke Ring",
 		back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
 	}
 
-	sets.midcast.seraph = {
-		ammo={ name="Coiste Bodhar", augments={'Path: A',}},
-		head="Bunzi's Hat",
-		body="Bunzi's Robe",
-		hands="Bunzi's Gloves",
-		legs="Bunzi's Pants",
-		feet="Bunzi's Sabots",
-		neck="Sanctity Necklace",
-		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
-		left_ear="Malignance Earring",
+	sets.midcast.emp = {
+		head={ name="Nyame Helm", augments={'Path: B',}},
+		body={ name="Nyame Mail", augments={'Path: B',}},
+		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+		legs={ name="Nyame Flanchard", augments={'Path: B',}},
+		feet={ name="Nyame Sollerets", augments={'Path: B',}},
+		neck="Marked Gorget",
+		waist="Eschan Stone",
+		left_ear="Telos Earring",
 		right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
-		left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+		left_ring={ name="Cacoethic Ring +1", augments={'Path: A',}},
 		right_ring="Epaminondas's Ring",
 		back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
 	}
@@ -237,7 +172,7 @@ function get_sets()
 	sets.aftercast.refresh = {
 		ammo="Homiliary",
 		head={ name="Viti. Chapeau +3", augments={'Enfeebling Magic duration','Magic Accuracy',}},
-		body="Atrophy Tabard +3",
+		body="Lethargy Sayon +3",
 		hands="Bunzi's Gloves",
 		legs={ name="Lengo Pants", augments={'INT+7','Mag. Acc.+7','"Mag.Atk.Bns."+3','"Refresh"+1',}},
 		feet="Bunzi's Sabots",
@@ -250,7 +185,7 @@ function get_sets()
 		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Damage taken-5%',}},
 	}
 	
-	sets.aftercast.melee = {
+	sets.aftercast.endmg = {
 		ammo={ name="Coiste Bodhar", augments={'Path: A',}},
 		head="Malignance Chapeau",
 		body="Ayanmo Corazza +2",
@@ -293,8 +228,8 @@ function get_sets()
 		waist="Reiki Yotai",
 		left_ear="Eabani Earring",
 		right_ear="Sherida Earring",
-		left_ring="Ilabrat Ring",
-		right_ring="Petrov Ring",
+		left_ring="Chirich Ring +1",
+		right_ring="Chirich Ring +1",
 		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%',}},
 	}
 
@@ -317,15 +252,15 @@ function get_sets()
 	sets.aftercast.dw30 = {
 		ammo={ name="Coiste Bodhar", augments={'Path: A',}},
 		head="Malignance Chapeau",
-		body="Ayanmo Corazza +2",
-		hands="Bunzi's Gloves",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
-		neck={ name="Loricate Torque +1", augments={'Path: A',}},
+		neck="Anu Torque",
 		waist="Reiki Yotai",
 		left_ear="Eabani Earring",
 		right_ear="Suppanomimi",
-		left_ring="Defending Ring",
+		left_ring="Chirich Ring +1",
 		right_ring="Haverton Ring +1",
 		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Damage taken-5%',}},
 	}
@@ -385,11 +320,11 @@ function get_sets()
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
-		neck="Combatant's Torque",
-		waist={ name="Kentarch Belt +1", augments={'Path: A',}},
-		left_ear="Mache Earring +1",
+		neck="Anu Torque",
+		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+		left_ear="Sherida Earring",
 		right_ear="Telos Earring",
-		left_ring={ name="Cacoethic Ring +1", augments={'Path: A',}},
+		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
 		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%',}},
 	}
@@ -426,10 +361,6 @@ function midcast(spell, act)
 		equip (sets.midcast.refresh)
 	end
 
-	if spell.english:startswith('Refresh') then
-		equip (sets.midcast.haste)
-	end
-
 	if spell.skill == 'Enfeebling Magic' then
 		equip (sets.midcast.enfeebling)
 	end
@@ -438,16 +369,12 @@ function midcast(spell, act)
 		equip (sets.midcast.elemental)
 	end
 
-	if spell.skill == 'Healing Magic' then
-		equip (sets.midcast.magicacc)
-	end
-
 	if spell.skill == 'Divine Magic' then
-		equip (sets.midcast.magicacc)
+		equip (sets.midcast.elemental)
 	end
 
 	if spell.skill == 'Dark Magic' then
-		equip (sets.midcast.magicacc)
+		equip (sets.midcast.enfeebling)
 	end
 
 	if spell.english == "Savage Blade" then
@@ -459,15 +386,15 @@ function midcast(spell, act)
 	end
 
 	if spell.english == "True Strike" then
-		equip (sets.midcast.truestrike)
+		equip (sets.midcast.chant)
 	end
 
 	if spell.english == "Black Halo" then
-		equip (sets.midcast.truestrike)
+		equip (sets.midcast.savage)
 	end
 
 	if spell.english == "Requiescat" then
-		equip (sets.midcast.req)
+		equip (sets.midcast.savage)
 	end
 
 	if spell.english == "Chant du Cygne" then
@@ -475,7 +402,23 @@ function midcast(spell, act)
 	end
 
 	if spell.english == "Sanguine Blade" then
-		equip (sets.midcast.sanguine)
+		equip (sets.midcast.seraph)
+	end
+
+	if spell.english == "Evisceration" then
+		equip (sets.midcast.chant)
+	end
+
+	if spell.english == "Aeolian Edge" then
+		equip (sets.midcast.seraph)
+	end
+
+	if spell.english == "Asuran Fists" then
+		equip (sets.midcast.savage)
+	end
+
+	if spell.english == "Empyreal Arrow" then
+		equip (sets.midcast.emp)
 	end
 
 	if spell.type == "Trust" then
